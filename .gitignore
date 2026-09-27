@@ -1,6 +1,9 @@
 # Visual Studio 2015 user specific files
 .vs/
 
+# Rider generated workspace and local settings
+/.idea/
+
 # Compiled Object files
 *.slo
 *.lo
@@ -35,6 +38,7 @@
 *.xcodeproj
 *.xcworkspace
 *.sln
+*.slnx
 *.suo
 *.opensdf
 *.sdf
