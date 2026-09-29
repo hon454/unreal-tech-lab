@@ -16,7 +16,25 @@
   ],
   "Plugins": [
     {
+      "Name": "GPULightmass",
+      "Enabled": true
+    },
+    {
       "Name": "ModelingToolsEditorMode",
+      "Enabled": true,
+      "TargetAllowList": [
+        "Editor"
+      ]
+    },
+    {
+      "Name": "ModelContextProtocol",
+      "Enabled": true,
+      "TargetAllowList": [
+        "Editor"
+      ]
+    },
+    {
+      "Name": "AllToolsets",
       "Enabled": true,
       "TargetAllowList": [
         "Editor"
