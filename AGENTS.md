@@ -3,6 +3,13 @@
 - 반복적인 조작이 필요한 검증은 UI·명령어·엔진 API로 대체하는 방안을 우선 고려한다.
 - 불필요한 에디터 실행·화면 캡처를 반복하지 않는다. 사용자 테스트를 기다리는 동안 독립적인 작업을 계속한다.
 
+## 빌드
+
+- Editor 빌드는 `pwsh -File Scripts/Build.ps1`로 수행한다. 기본값은 `TechLabEditor Win64 Development`이며 `-Target`, `-Configuration`, `-Platform`으로 변경한다.
+- 엔진 경로는 `.uproject`의 `EngineAssociation`으로 자동 탐색한다. 찾지 못하면 환경변수 `UE_ROOT`에 엔진 루트를 지정한다. 공유 파일에는 엔진 절대 경로를 적지 않는다.
+- 에디터가 Live Coding을 켠 채 실행 중이면 외부 빌드가 거부된다. 에디터를 닫을지 사용자에게 먼저 확인한다.
+- `Intermediate/`, `Binaries/`, `DerivedDataCache/`, `Saved/`와 `.uasset`·`.umap`은 코드 탐색 대상에서 제외한다.
+
 ## C++ 코드 규칙
 
 - 제어문은 항상 중괄호를 사용한다. 비어 있지 않은 함수·람다·제어문 본문은 여러 줄로 작성한다.
@@ -26,3 +33,4 @@
 ## 커밋 규칙
 
 - 커밋 메시지는 Conventional Commits 형식인 `type(scope): description`을 따른다. `scope`는 필요할 때만 사용하고, 변경 성격에 맞는 `feat`, `fix`, `refactor`, `docs`, `test`, `build`, `ci`, `chore` 등의 타입을 선택한다.
+- 커밋 메시지와 PR 설명에 `Co-Authored-By` 등 AI 도구 서명을 붙이지 않는다.

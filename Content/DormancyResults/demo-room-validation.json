@@ -1,0 +1,54 @@
+{
+  "schema": "resource-demo-room-v2",
+  "engine": "5.8.3-58210709",
+  "map": "/Game/Maps/Networking/L_Networking_Dormancy",
+  "map_sha256": "CC8F634C80F402978DFE1774CB6F5D25772CA1E9202C24E88C2370727B0AD3F3",
+  "module_sha256": "454CB09FBCE8C8BCCD93600497FFB6C63AD47EF2FE47C48B354309A65F4C2124",
+  "build": "Saved/Logs/BuildWorldButtonsFinal.log",
+  "automation_tests": [
+    {
+      "state": "Success",
+      "name": "TechLab.Dormancy.ControlButtons"
+    },
+    {
+      "state": "Success",
+      "name": "TechLab.Dormancy.ResourceDamage"
+    }
+  ],
+  "automation_report": "Saved/Automation/WorldButtons/index.json",
+  "dedicated_two_client_compare": {
+    "count": 256,
+    "warm_seconds": 2,
+    "headless": true,
+    "stable_seconds": 2,
+    "results": [
+      {
+        "run_id": "9A0C3ADF4A32C8C5B4A47D86982692A2",
+        "result": "Final state matched | 2/2 clients | convergence upper bound 0.471s | SHA1 over sorted ID/version/health; intermediate versions may coalesce.\nDigest=51477ABB53828E4B7E43824099A004677C592B04\nSteps=20\nChanges=520\nFlushes=0\nWakes=0\nConnectionChanged=0\nCatchupSteps=0\n"
+      },
+      {
+        "run_id": "6C66629D4747110D4A39899396ECB00A",
+        "result": "Final state matched | 2/2 clients | convergence upper bound 0.456s | SHA1 over sorted ID/version/health; intermediate versions may coalesce.\nDigest=51477ABB53828E4B7E43824099A004677C592B04\nSteps=20\nChanges=520\nFlushes=520\nWakes=0\nConnectionChanged=0\nCatchupSteps=0\n"
+      },
+      {
+        "run_id": "B9DD216246448FD48479439C58B0FD9C",
+        "result": "Final state matched | 2/2 clients | convergence upper bound 0.468s | SHA1 over sorted ID/version/health; intermediate versions may coalesce.\nDigest=51477ABB53828E4B7E43824099A004677C592B04\nSteps=20\nChanges=520\nFlushes=0\nWakes=26\nConnectionChanged=0\nCatchupSteps=0\n"
+      }
+    ],
+    "folder": "Saved/DormancyRuns/demoroom-final-map",
+    "damaged_percent": 10,
+    "driver_client": 2,
+    "damage_seconds": 2,
+    "interval_seconds": 0.1
+  },
+  "control_path": {
+    "status": "Passed: invalid settings rejected, running settings locked, stop converged, changed settings cleared field, reset and restart succeeded",
+    "folder": "Saved/DormancyRuns/demoroom-controls-final"
+  },
+  "interaction_verification": {
+    "final_lighting_readability": "Unverified: requested after map reload",
+    "actual_E_F_movement_camera_HUD": "Unverified: requested from user",
+    "server_button_tests": "Passed: distance, shared settings, rate limit, run lock, stop"
+  },
+  "performance": "NOT MEASURED for this layout. Existing resource-* images/data predate DemoRoom."
+}

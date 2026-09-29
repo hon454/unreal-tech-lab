@@ -4,5 +4,5 @@
 
 ATechLabGameMode::ATechLabGameMode()
 {
-	// stub
+	bUseSeamlessTravel = true;
 }

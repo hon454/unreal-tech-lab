@@ -1,0 +1,149 @@
+RESOURCE DORMANCY / REAL MEASUREMENTS
+ARCHIVED LAYOUT: measured BEFORE the DemoRoom / world-button rebuild.
+Current layout performance: NOT MEASURED. These are preserved historical results.
+Source: Unreal Insights timing events and engine UNetConnection counters.
+Visible clients on the same host. CPU includes host scheduling contention.
+GT active: frame wall time minus instrumented idle/wait union, not OS CPU time.
+Packet bytes include engine packet overhead; not application payload or NIC wire bytes.
+Phase percentiles use complete frames. Run-to-run deviation is reported separately.
+Replication and flush/wake scopes are separate; do not sum nested inclusive scopes.
+
+HOW TO READ THIS RESULT
+Policy 0 = always Awake; 1 = Flush before each damage; 2 = Awake throughout damage interval.
+Stable phases isolate unchanged resources. Change phases apply the same fixed cohort and damage schedule.
+The Awake stable call tree shows DormancySample under Replicate Actor / Process Prioritized Actors.
+The dormant stable call tree removes that repeated resource work; player, controller, lab and connection work remain.
+Flush reopens channels: Networking Insights packet 7483 in rare-p1-r1 shows NewActor, Health and Version.
+This channel work explains why frequent Flush can cost more than staying Awake through a burst.
+These runs do not establish the crossover where Dormancy is slower than always Awake.
+Only two repetitions per condition: variation is descriptive, not a confidence interval.
+Same Windows host, Ryzen 9 5950X, 64 GB RAM; editor server mode, two rendered clients, 60 FPS cap.
+UnrealEditor -server is a separate dedicated process, not a packaged Server-target build.
+Existing unrelated editors remained open. Instrumentation and shared-machine contention are included.
+Standalone, packaged server and Listen performance: NOT MEASURED.
+Late join, 100 ms lag / 5% loss, and Listen final-state convergence passed separate headless correctness runs.
+New all-client F/HUD input and evidence-image zoom: pending user validation.
+PNG captures are actual Insights screens. Their mouse-selected windows approximate the named phase;
+reported numbers use exact trace regions and complete frames from CSV exports.
+Raw evidence: Saved/DormancyRuns/<name>/server.utrace and exports; Saved/Dormancy/<Run ID>/.
+
+Actors 1024 | cohort 10% | interval 0.100s | connections 2 | netmode 1 | policy 0 | repeats 2
+  Stable: replication mean 4.0752 ms/frame; repeat SD 0.0611; range 4.0320..4.1184
+  Change: replication mean 4.3276 ms/frame; repeat SD 0.0720; range 4.2767..4.3785
+  Run 97BC1849449E55315788D1A7BE70D9CE | UE 5.8.3-58210709+++UE5+Release-5.8 | resource-final-frequent-p0-r1
+    Stable trace 38.735..48.747s: replication avg/p95/max 4.0320/5.1579/7.6723 ms; GT active 6.2659 ms; flush 0.0000 ms; wake 0.0000 ms
+      Connection 256: 2.74 KiB/s; 592 packets in 10.01s
+      Connection 257: 2.75 KiB/s; 593 packets in 10.01s
+    Change trace 48.747..58.751s: replication avg/p95/max 4.2767/5.3924/8.0969 ms; GT active 6.5139 ms; flush 0.0000 ms; wake 0.0000 ms
+      Connection 256: 19.36 KiB/s; 593 packets in 10.00s
+      Connection 257: 19.36 KiB/s; 591 packets in 10.00s
+    Final state matched | 2/2 clients | convergence upper bound 0.451s | SHA1 over sorted ID/version/health; intermediate versions may coalesce.
+  Run A57B081A40B70E7E7165779FB68EB5E2 | UE 5.8.3-58210709+++UE5+Release-5.8 | resource-final-frequent-p0-r2
+    Stable trace 39.026..49.058s: replication avg/p95/max 4.1184/5.3490/7.6626 ms; GT active 6.3910 ms; flush 0.0000 ms; wake 0.0000 ms
+      Connection 256: 2.72 KiB/s; 589 packets in 10.03s
+      Connection 257: 2.73 KiB/s; 592 packets in 10.03s
+    Change trace 49.058..59.082s: replication avg/p95/max 4.3785/5.5705/8.2397 ms; GT active 6.6026 ms; flush 0.0000 ms; wake 0.0000 ms
+      Connection 256: 19.34 KiB/s; 597 packets in 10.02s
+      Connection 257: 19.33 KiB/s; 596 packets in 10.02s
+    Final state matched | 2/2 clients | convergence upper bound 0.452s | SHA1 over sorted ID/version/health; intermediate versions may coalesce.
+
+Actors 1024 | cohort 10% | interval 0.100s | connections 2 | netmode 1 | policy 1 | repeats 2
+  Stable: replication mean 0.1748 ms/frame; repeat SD 0.0030; range 0.1727..0.1770
+  Change: replication mean 2.5781 ms/frame; repeat SD 0.0387; range 2.5508..2.6055
+  Run 3230307F4BE8B6B25DA71F835C0EEA83 | UE 5.8.3-58210709+++UE5+Release-5.8 | resource-final-frequent-p1-r1
+    Stable trace 38.383..48.389s: replication avg/p95/max 0.1727/0.3101/0.7656 ms; GT active 2.4139 ms; flush 0.0000 ms; wake 0.0000 ms
+      Connection 256: 2.73 KiB/s; 588 packets in 10.01s
+      Connection 257: 2.74 KiB/s; 591 packets in 10.01s
+    Change trace 48.389..58.410s: replication avg/p95/max 2.5508/4.8977/6.7663 ms; GT active 5.4229 ms; flush 0.1259 ms; wake 0.0000 ms
+      Connection 256: 72.98 KiB/s; 1057 packets in 10.02s
+      Connection 257: 88.89 KiB/s; 1188 packets in 10.02s
+    Final state matched | 2/2 clients | convergence upper bound 0.451s | SHA1 over sorted ID/version/health; intermediate versions may coalesce.
+  Run 632699014F11DA416EAED19EE2AAA16D | UE 5.8.3-58210709+++UE5+Release-5.8 | resource-final-frequent-p1-r2
+    Stable trace 39.949..49.978s: replication avg/p95/max 0.1770/0.2977/0.7123 ms; GT active 2.5258 ms; flush 0.0000 ms; wake 0.0000 ms
+      Connection 256: 2.74 KiB/s; 593 packets in 10.03s
+      Connection 257: 2.74 KiB/s; 593 packets in 10.03s
+    Change trace 49.978..60.002s: replication avg/p95/max 2.6055/4.9162/8.2522 ms; GT active 5.5501 ms; flush 0.1252 ms; wake 0.0000 ms
+      Connection 256: 72.54 KiB/s; 1048 packets in 10.02s
+      Connection 257: 90.44 KiB/s; 1196 packets in 10.02s
+    Final state matched | 2/2 clients | convergence upper bound 0.420s | SHA1 over sorted ID/version/health; intermediate versions may coalesce.
+
+Actors 1024 | cohort 10% | interval 0.100s | connections 2 | netmode 1 | policy 2 | repeats 2
+  Stable: replication mean 0.1699 ms/frame; repeat SD 0.0084; range 0.1640..0.1758
+  Change: replication mean 0.9167 ms/frame; repeat SD 0.1015; range 0.8449..0.9884
+  Run 3F97D0124AED7911A27C76AD39887D5D | UE 5.8.3-58210709+++UE5+Release-5.8 | resource-final-frequent-p2-r1
+    Stable trace 40.592..50.624s: replication avg/p95/max 0.1758/0.2859/0.4490 ms; GT active 2.4559 ms; flush 0.0000 ms; wake 0.0000 ms
+      Connection 256: 2.74 KiB/s; 592 packets in 10.03s
+      Connection 257: 2.74 KiB/s; 593 packets in 10.03s
+    Change trace 50.624..60.654s: replication avg/p95/max 0.9884/1.7453/3.2381 ms; GT active 3.8585 ms; flush 0.0000 ms; wake 0.0041 ms
+      Connection 256: 19.25 KiB/s; 607 packets in 10.03s
+      Connection 257: 19.18 KiB/s; 605 packets in 10.03s
+    Final state matched | 2/2 clients | convergence upper bound 0.451s | SHA1 over sorted ID/version/health; intermediate versions may coalesce.
+  Run C38072204F6F44206BC5E99CF81A744F | UE 5.8.3-58210709+++UE5+Release-5.8 | resource-final-frequent-p2-r2
+    Stable trace 39.555..49.560s: replication avg/p95/max 0.1640/0.2856/0.5699 ms; GT active 2.3840 ms; flush 0.0000 ms; wake 0.0000 ms
+      Connection 256: 2.74 KiB/s; 595 packets in 10.01s
+      Connection 257: 2.72 KiB/s; 590 packets in 10.01s
+    Change trace 49.560..59.567s: replication avg/p95/max 0.8449/1.4595/2.9722 ms; GT active 3.0315 ms; flush 0.0000 ms; wake 0.0018 ms
+      Connection 256: 19.27 KiB/s; 603 packets in 10.01s
+      Connection 257: 19.24 KiB/s; 605 packets in 10.01s
+    Final state matched | 2/2 clients | convergence upper bound 0.474s | SHA1 over sorted ID/version/health; intermediate versions may coalesce.
+
+Actors 1024 | cohort 10% | interval 1.000s | connections 2 | netmode 1 | policy 0 | repeats 2
+  Stable: replication mean 4.2081 ms/frame; repeat SD 0.2689; range 4.0180..4.3982
+  Change: replication mean 4.1215 ms/frame; repeat SD 0.0863; range 4.0605..4.1825
+  Run 83F52BA84676433BDCDFC8AE001A9A2D | UE 5.8.3-58210709+++UE5+Release-5.8 | resource-final-rare-p0-r1
+    Stable trace 38.454..48.482s: replication avg/p95/max 4.3982/5.9621/10.1345 ms; GT active 6.8863 ms; flush 0.0000 ms; wake 0.0000 ms
+      Connection 256: 2.69 KiB/s; 580 packets in 10.03s
+      Connection 257: 2.74 KiB/s; 592 packets in 10.03s
+    Change trace 48.482..58.506s: replication avg/p95/max 4.1825/5.4721/9.0506 ms; GT active 6.5005 ms; flush 0.0000 ms; wake 0.0000 ms
+      Connection 256: 4.40 KiB/s; 592 packets in 10.02s
+      Connection 257: 4.41 KiB/s; 593 packets in 10.02s
+    Final state matched | 2/2 clients | convergence upper bound 0.419s | SHA1 over sorted ID/version/health; intermediate versions may coalesce.
+  Run 244442794FDC697E59795D969FE6676D | UE 5.8.3-58210709+++UE5+Release-5.8 | resource-final-rare-p0-r2
+    Stable trace 38.555..48.585s: replication avg/p95/max 4.0180/5.2997/10.5398 ms; GT active 6.3900 ms; flush 0.0000 ms; wake 0.0000 ms
+      Connection 256: 2.70 KiB/s; 582 packets in 10.03s
+      Connection 257: 2.72 KiB/s; 587 packets in 10.03s
+    Change trace 48.585..58.596s: replication avg/p95/max 4.0605/5.5099/14.2142 ms; GT active 6.3493 ms; flush 0.0000 ms; wake 0.0000 ms
+      Connection 256: 4.40 KiB/s; 589 packets in 10.01s
+      Connection 257: 4.42 KiB/s; 594 packets in 10.01s
+    Final state matched | 2/2 clients | convergence upper bound 0.437s | SHA1 over sorted ID/version/health; intermediate versions may coalesce.
+
+Actors 1024 | cohort 10% | interval 1.000s | connections 2 | netmode 1 | policy 1 | repeats 2
+  Stable: replication mean 0.1629 ms/frame; repeat SD 0.0062; range 0.1585..0.1673
+  Change: replication mean 0.3890 ms/frame; repeat SD 0.0097; range 0.3821..0.3959
+  Run 9B444F91499D42E5106C03A7FF540918 | UE 5.8.3-58210709+++UE5+Release-5.8 | resource-final-rare-p1-r1
+    Stable trace 38.881..48.898s: replication avg/p95/max 0.1585/0.2728/0.8532 ms; GT active 2.2346 ms; flush 0.0000 ms; wake 0.0000 ms
+      Connection 256: 2.74 KiB/s; 590 packets in 10.02s
+      Connection 257: 2.71 KiB/s; 584 packets in 10.02s
+    Change trace 48.898..58.931s: replication avg/p95/max 0.3821/2.1103/5.7408 ms; GT active 2.5841 ms; flush 0.0145 ms; wake 0.0000 ms
+      Connection 256: 13.29 KiB/s; 667 packets in 10.03s
+      Connection 257: 12.64 KiB/s; 653 packets in 10.03s
+    Final state matched | 2/2 clients | convergence upper bound 0.451s | SHA1 over sorted ID/version/health; intermediate versions may coalesce.
+  Run B028EA804A2094CF8D90799C1522C889 | UE 5.8.3-58210709+++UE5+Release-5.8 | resource-final-rare-p1-r2
+    Stable trace 38.136..48.161s: replication avg/p95/max 0.1673/0.2839/0.7295 ms; GT active 2.4338 ms; flush 0.0000 ms; wake 0.0000 ms
+      Connection 256: 2.69 KiB/s; 581 packets in 10.02s
+      Connection 257: 2.69 KiB/s; 582 packets in 10.02s
+    Change trace 48.161..58.185s: replication avg/p95/max 0.3959/2.1646/8.1870 ms; GT active 2.7286 ms; flush 0.0146 ms; wake 0.0000 ms
+      Connection 256: 13.29 KiB/s; 665 packets in 10.02s
+      Connection 257: 12.68 KiB/s; 668 packets in 10.02s
+    Final state matched | 2/2 clients | convergence upper bound 0.415s | SHA1 over sorted ID/version/health; intermediate versions may coalesce.
+
+Actors 1024 | cohort 10% | interval 1.000s | connections 2 | netmode 1 | policy 2 | repeats 2
+  Stable: replication mean 0.1691 ms/frame; repeat SD 0.0022; range 0.1675..0.1706
+  Change: replication mean 0.6383 ms/frame; repeat SD 0.0047; range 0.6350..0.6417
+  Run E53438CD4F689B28B46AFE948C952140 | UE 5.8.3-58210709+++UE5+Release-5.8 | resource-final-rare-p2-r1
+    Stable trace 39.499..49.524s: replication avg/p95/max 0.1706/0.3161/1.0744 ms; GT active 2.3896 ms; flush 0.0000 ms; wake 0.0000 ms
+      Connection 256: 2.74 KiB/s; 594 packets in 10.02s
+      Connection 257: 2.74 KiB/s; 596 packets in 10.02s
+    Change trace 49.524..59.547s: replication avg/p95/max 0.6350/1.0124/2.9914 ms; GT active 2.9114 ms; flush 0.0000 ms; wake 0.0040 ms
+      Connection 256: 5.15 KiB/s; 602 packets in 10.02s
+      Connection 257: 5.08 KiB/s; 600 packets in 10.02s
+    Final state matched | 2/2 clients | convergence upper bound 0.453s | SHA1 over sorted ID/version/health; intermediate versions may coalesce.
+  Run 7EBD03CE4E0D2BEC12B6FF864AA2C59B | UE 5.8.3-58210709+++UE5+Release-5.8 | resource-final-rare-p2-r2
+    Stable trace 39.989..50.011s: replication avg/p95/max 0.1675/0.2660/0.5506 ms; GT active 2.3691 ms; flush 0.0000 ms; wake 0.0000 ms
+      Connection 256: 2.74 KiB/s; 593 packets in 10.02s
+      Connection 257: 2.73 KiB/s; 590 packets in 10.02s
+    Change trace 50.011..60.041s: replication avg/p95/max 0.6417/1.0221/4.2886 ms; GT active 2.8627 ms; flush 0.0000 ms; wake 0.0018 ms
+      Connection 256: 5.16 KiB/s; 602 packets in 10.03s
+      Connection 257: 5.10 KiB/s; 603 packets in 10.03s
+    Final state matched | 2/2 clients | convergence upper bound 0.443s | SHA1 over sorted ID/version/health; intermediate versions may coalesce.
+

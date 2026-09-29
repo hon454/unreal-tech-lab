@@ -1,0 +1,29 @@
+{
+  "attribution": {
+    "commit": "",
+    "pr": ""
+  },
+  "permissions": {
+    "allow": [
+      "PowerShell(pwsh -File Scripts/Build.ps1 *)",
+      "PowerShell(git status *)",
+      "PowerShell(git diff *)",
+      "PowerShell(git log *)",
+      "PowerShell(git show *)",
+      "Bash(git status *)",
+      "Bash(git diff *)",
+      "Bash(git log *)",
+      "Bash(git show *)"
+    ],
+    "deny": [
+      "Read(./Intermediate/**)",
+      "Read(./Binaries/**)",
+      "Read(./DerivedDataCache/**)",
+      "Read(./Saved/**)",
+      "Read(./.vs/**)",
+      "Read(./.idea/**)",
+      "Read(./**/*.uasset)",
+      "Read(./**/*.umap)"
+    ]
+  }
+}

@@ -9,6 +9,7 @@
 #include "Misc/PackageName.h"
 #include "UObject/ConstructorHelpers.h"
 #include "TechLab.h"
+#include "Demos/Networking/Dormancy/DormancyLab.h"
 
 ATechLabPortal::ATechLabPortal()
 {
@@ -33,8 +34,7 @@ ATechLabPortal::ATechLabPortal()
 	Entrance->SetGenerateOverlapEvents(true);
 	Entrance->OnComponentBeginOverlap.AddDynamic(this, &ATechLabPortal::EnterExhibit);
 
-	auto MakeLabel = [this](const TCHAR* Name, float Height, float Size)
-	{
+	auto MakeLabel = [this](const TCHAR* Name, float Height, float Size) {
 		UTextRenderComponent* Label = CreateDefaultSubobject<UTextRenderComponent>(Name);
 		Label->SetupAttachment(RootComponent);
 		Label->SetRelativeLocation(FVector(105, 0, Height));
@@ -44,6 +44,7 @@ ATechLabPortal::ATechLabPortal()
 		Label->SetTextRenderColor(FColor::White);
 		return Label;
 	};
+
 	Title = MakeLabel(TEXT("Title"), 285, 30);
 	Subtitle = MakeLabel(TEXT("Subtitle"), 230, 16);
 	Status = MakeLabel(TEXT("Status"), 155, 22);
@@ -52,13 +53,24 @@ ATechLabPortal::ATechLabPortal()
 void ATechLabPortal::OnConstruction(const FTransform& Transform)
 {
 	Super::OnConstruction(Transform);
-	Title->SetText(ExhibitTitle);
-	Title->SetTextRenderColor(AccentColor);
-	Subtitle->SetText(ExhibitSubtitle);
-	Status->SetText(DestinationMap.IsNull()
-		? FText::FromString(TEXT("COMING SOON"))
-		: FText::FromString(TEXT("WALK IN TO ENTER")));
-	Status->SetTextRenderColor(DestinationMap.IsNull() ? FColor(160, 170, 185) : AccentColor);
+	// Text render components can be stripped when loading the map on a dedicated server.
+	if (Title)
+	{
+		Title->SetText(ExhibitTitle);
+		Title->SetTextRenderColor(AccentColor);
+	}
+
+	if (Subtitle)
+	{
+		Subtitle->SetText(ExhibitSubtitle);
+	}
+
+	if (Status)
+	{
+		Status->SetText(DestinationMap.IsNull() ? FText::FromString(TEXT("COMING SOON"))
+													: FText::FromString(TEXT("/ HUD > ENTER DORMANCY")));
+		Status->SetTextRenderColor(DestinationMap.IsNull() ? FColor(160, 170, 185) : AccentColor);
+	}
 }
 
 void ATechLabPortal::BeginPlay()
@@ -70,9 +82,8 @@ void ATechLabPortal::BeginPlay()
 	}
 }
 
-void ATechLabPortal::EnterExhibit(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor,
-	UPrimitiveComponent* OtherComponent, int32 OtherBodyIndex, bool bFromSweep,
-	const FHitResult& SweepResult)
+void ATechLabPortal::EnterExhibit(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComponent,
+								  int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
 {
 	const APawn* Pawn = Cast<APawn>(OtherActor);
 	if (!HasAuthority() || bTravelRequested || DestinationMap.IsNull() || !Pawn || !Pawn->IsPlayerControlled())
@@ -81,6 +92,12 @@ void ATechLabPortal::EnterExhibit(UPrimitiveComponent* OverlappedComponent, AAct
 	}
 
 	const FString MapPackage = DestinationMap.ToSoftObjectPath().GetLongPackageName();
+	// This exhibit uses the HUD for server-authorized travel; portals are visual markers.
+	if (ADormancyLab::Find(GetWorld()))
+	{
+		return;
+	}
+
 	if (!FPackageName::DoesPackageExist(MapPackage))
 	{
 		UE_LOG(LogTechLab, Warning, TEXT("Exhibit destination is unavailable: %s"), *MapPackage);

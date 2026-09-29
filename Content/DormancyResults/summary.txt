@@ -1,0 +1,121 @@
+실제 사전 측정 / RECORDED INSIGHTS RESULTS
+실시간 HUD 카운터와 별개의 저장된 분석입니다.
+아래 18회 성능 결과는 코드 구조 분리 전 바이너리의 기록입니다. refactor-final-*는 별도의 정확성 회귀 검증이며 성능 통계에 합산하지 않습니다.
+실제 Insights 이미지: 미확보. Computer Use가 Esc로 중단되어 화면 캡처/확대 조작 확인이 남아 있습니다.
+UE 5.8.3 / CL 58210709 | 2026-09-27 | Ryzen 9 5950X / 64 GB
+Editor -server + two separate -game -nullrhi clients on one host.
+4,096 actors | AlwaysRelevant | NetUpdateFrequency 30 | cap 60 fps
+netspeed 100000/connection | seed 74219 | warm 3s / stable 6s / change 6s
+Each arm runs independently. No player input was automated.
+
+TIMING INSIGHTS / 변경 구간: ms per complete server frame
+조건: mean replication / mean GT active / replication p95 / worst frame
+frequent-0.05-0 (n=3): 6.413 / 7.562 / 8.232 / 25.137
+  run mean stddev: 0.511 ms
+frequent-0.05-1 (n=3): 7.748 / 10.109 / 11.081 / 14.493
+  run mean stddev: 0.852 ms
+frequent-0.1-0 (n=3): 8.830 / 9.857 / 13.856 / 26.304
+  run mean stddev: 0.273 ms
+frequent-0.1-1 (n=3): 7.053 / 9.508 / 9.572 / 27.861
+  run mean stddev: 0.807 ms
+rare-0 (n=3): 8.170 / 9.169 / 10.376 / 25.208
+  run mean stddev: 0.144 ms
+rare-1 (n=3): 0.138 / 1.212 / 0.382 / 2.530
+  run mean stddev: 0.039 ms
+
+해석 기준 / HOW TO READ
+GT active = FEngineLoop::Tick minus instrumented idle and explicit RHI wait intervals; not OS scheduler CPU time. Uninstrumented waiting/preemption may remain.
+Replication = engine ServerReplicateActors Time. Nested scope times are not added to their parent. p95 above is the mean of per-run p95; maximum is worst observed frame.
+Flush/wake runs in the mutation timer outside ServerReplicateActors: compare GT active as well.
+
+관측 결론 / OBSERVATIONS
+Stable replication: 8.544 -> 0.083 ms/frame (99.0% reduction).
+Awake actors spend time in Consider Actors and Process Prioritized Actors / Replicate Actor even with little state traffic. Dormancy removes stable actors from most of this work.
+World/character ticks, base connection traffic, timer/HUD/validation instrumentation and actor memory remain. Dormancy is not a reduction in actor count.
+10% every 0.1s: GT active Awake 9.857, Dormancy 9.508 ms/frame. Dormancy was faster here.
+10% every 0.05s: GT active Awake 7.562, Dormancy 10.109 ms/frame. Dormancy was slower here.
+At high frequency, repeated flush/reopening and changed-property work erode savings. Connection bandwidth caps and saturation also affect which actors are processed per frame; this is not a universal crossover frequency.
+
+연결별 송신 / ENGINE CONNECTION COUNTERS
+UNetConnection OutTotalBytes includes send buffer + engine PacketOverhead. It is not application payload and not captured NIC wire bytes.
+Net channel trace was captured, but Networking Insights packet/content drilldown and per-actor payload breakdown remain unverified. No substitute/fake screenshots are provided. Full per-connection engine counter mean/p95/max sample rates are in runs.json.
+frequent-0.05-0: mean per connection 84580 B/s during Change
+frequent-0.05-1: mean per connection 98798 B/s during Change
+frequent-0.1-0: mean per connection 70073 B/s during Change
+frequent-0.1-1: mean per connection 98649 B/s during Change
+rare-0: mean per connection 3318 B/s during Change
+rare-1: mean per connection 6209 B/s during Change
+
+RUN IDS / 구간 trace seconds
+frequent-0.05-0-r1 | EBA50C504EAE7B851E2F94A1739679C8 | Stable 28.441-34.462 | Change 34.462-40.470
+frequent-0.05-0-r2 | D2507E6E4416DAF4CC6F1AA1EA1235FC | Stable 29.891-35.918 | Change 35.918-41.943
+frequent-0.05-0-r3 | 69DDAFF4441AEEF23AEA8EA914A1AF95 | Stable 31.344-37.360 | Change 37.360-43.372
+frequent-0.05-1-r1 | 21F30D164CB45E5B977CD9BAC14B36AC | Stable 28.721-34.727 | Change 34.727-40.749
+frequent-0.05-1-r2 | A95786D143BE368698C92BB2F2A42071 | Stable 28.643-34.647 | Change 34.647-40.664
+frequent-0.05-1-r3 | D7C412C1483ECAEC14F0F7B7B6FB7D9B | Stable 29.805-35.828 | Change 35.828-41.855
+frequent-0.1-0-r1 | 8654BFDD41BF39FDE032718C3CC20D56 | Stable 27.736-33.749 | Change 33.749-39.756
+frequent-0.1-0-r2 | 734139FD42F794CE3F55EA8DAA0198C8 | Stable 32.238-38.263 | Change 38.263-44.269
+frequent-0.1-0-r3 | C8D6B3E54AF51A6A2C1A0286D9FCE4BF | Stable 31.824-37.831 | Change 37.831-43.841
+frequent-0.1-1-r1 | 43A12E11411D6C39EA032295791EA3D3 | Stable 29.942-35.944 | Change 35.944-41.962
+frequent-0.1-1-r2 | 650629DD4D015B22F3543FA06537E792 | Stable 28.294-34.322 | Change 34.322-40.347
+frequent-0.1-1-r3 | B079ED654B2E8233619D058EF42671C1 | Stable 28.465-34.480 | Change 34.480-40.489
+rare-0-r1 | 04A2FA2049C249DD181BE985F759F4A6 | Stable 32.237-38.270 | Change 38.270-44.279
+rare-0-r2 | 1C99FC7C40CC65538DA414BBA906E5EB | Stable 28.977-34.999 | Change 34.999-41.027
+rare-0-r3 | 2E253F2F4F489EF830C16CAE3D4A88F1 | Stable 27.963-33.986 | Change 33.986-39.987
+rare-1-r1 | E82A7BB54C1CCDFA0AC7D0A29308CCAC | Stable 28.669-34.678 | Change 34.678-40.705
+rare-1-r2 | AEFE5242423260FD3AF29CA40ED5B549 | Stable 31.091-37.094 | Change 37.094-43.097
+rare-1-r3 | F3B18BB846292D3C8121F0B23F1A82B0 | Stable 29.017-35.035 | Change 35.035-41.061
+
+검증과 한계
+Performance runs passed initial/final SHA1 over sorted ID/version/value and actor count for both clients. This is checksum equivalence, not delivery of every intermediate state.
+Convergence includes reporting interval and RTT. All runs share this host with existing apps; six-second windows are short. See repeat spread.
+Manual movement/camera/HUD/close-to-input recovery: 미검증 until confirmed by the user.
+Packaged dedicated server, remote hardware/network performance, other relevancy/update rates, Iris/ReplicationGraph: 미측정.
+Additional correctness checks are listed in the evidence validation file.
+Raw trace: Saved/DormancyRuns/<name>/server.utrace; export CSVs next to it.
+
+# 검증 상태
+
+- Editor C++ 빌드: 기존 구현 통과 (`Saved/Logs/DormancyFinalBuild.txt`), 코드 구조 분리 후 최종 빌드도 통과 (`Saved/Logs/DormancyRefactorBuild.txt`).
+- 에디터 AssetTools 허브 이동: 완료. ResavePackages fixupredirects로 이전 리다이렉터 삭제 로그 확보.
+- Basic 템플릿 데모맵: 생성·저장 및 Blueprint 컴파일 통과. 두 맵 로드, World Partition 없음, use_external_actors=false, 외부 패키지 없음, 이전 허브 Asset Registry 참조 없음 확인 (`Saved/DormancyAssetValidation.txt`).
+- 별도 서버 + 두 클라이언트: 실제 접속 및 Initial/Converge 상태 일치 확인.
+- 관찰 클라이언트 실행 요청: 실제 서버 거부 로그 확인.
+- 4,096개 액터 Baseline/Dormancy/Frequent Changes: 6조건 × 3회 = 18회 완료. 9개 A/B 쌍의 설정/seed/step 수/변경 건수/최종 상태 digest 동일. 전후 trace와 Insights CSV 확보.
+- 집계 함수: idle 구간 합집합 및 nearest-rank p95 경계 테스트 통과. 테스트용 표본은 실험 결과에 포함하지 않음.
+- 지속 Awake: 통과. 1,024개 중 102개 cohort, 60 step/6,120 changes, explicit wake 102회/explicit flush 0회. 종료 후 두 클라이언트 최종 일치 (`validation-continuous`).
+- Late join: 통과. 첫 클라이언트로 변경 완료 후 두 번째 접속, `LateJoinMatch:257` 확인 (`validation-latejoin`).
+- 지연·손실: 통과. 서버 로그에서 PktLag=100ms/PktLoss=5% 적용 확인, 30 step/3,060 changes/flush 3,060회 후 2/2 최종 일치 (`validation-loss`). 이는 해당 에뮬레이션 조건의 정확성 검증이며 원격 네트워크 성능 측정이 아니다.
+- 잘못된 액터 수 거부, 관찰자 시작 거부, 실행 중 설정 변경 거부, 정지→수렴→초기화→재실행: 통과 (`validation-controls`).
+- 서버 RPC 전원 맵 왕복: 통과 (`validation-travel-v3`). 메인은 `LAB_TRAVEL_COMPLETE Main=1`, 관찰자는 `Main=0`. 첫 검사에서 기존 포털의 dedicated-server-stripped TextRender null 접근을 발견해 수정했다. 컨트롤러 교체 시 메인 역할을 SeamlessTravelFrom으로 복사하고 새 월드의 HUD 타이머를 복구했다. 실패 실행 로그도 보존한다.
+- 실제 Insights 캡처와 Networking Insights 연결/액터별 packet-content 드릴다운: 미완료. Computer Use가 물리 Esc 입력으로 중단되어 추가 화면 조작을 수행하지 않았다. net 채널 원본 trace는 확보했으나 UI 분석/이미지로 대체 주장하지 않는다.
+- 이동·점프·카메라, HUD 조작 및 닫은 뒤 입력 복귀, 이미지 확대·스크롤, 실제 사용자 조작에 의한 전원 맵 왕복: 사용자 수동 확인 전 미검증.
+- 패키징/cook 및 패키징 Dedicated Server 실행: 미검증. 현재 검증은 installed Editor 기반 별도 server/client 프로세스다.
+
+자동 드라이버는 HUD와 같은 ServerLabAction RPC/서버 Request 경로를 사용한다. 자동 결과를 실제 UI 조작 검증으로 표현하지 않는다.
+
+## 코드 구조 분리 후 회귀 검증 (2026-09-27)
+
+아래 회귀 검증에 사용한 모듈 SHA256: `B03026CB1991D4CACBB88B88B8CD7E8041FCFBBB4FBC382161A042732A5F9A82`.
+아래 실행은 installed Editor 기반 별도 서버와 headless 클라이언트로 수행한다. 액터 수 256, warm/stable/change 각 2초이며 성능 비교 통계에 포함하지 않는다. 원본 로그/trace는 `Saved/DormancyRuns/`의 각 실행 폴더에 남긴다.
+
+| 실행 | 확인 항목 | 상태 |
+|---|---|---|
+| `refactor-final-controls` | 컴포넌트 RPC, 잘못된 설정/관찰자 요청 거부, 실행 중 설정 잠금, 정지·초기화·재실행, 2/2 상태 일치 | 통과 |
+| `refactor-final-travel` | Hub → Dormancy → Hub 전원 이동, 메인/관찰자 역할 유지, 기존 맵의 native 클래스 로드 | 통과 |
+| `refactor-final-continuous` | 26개 cohort, 40 step/1,040 changes, wake 26회/flush 0회, 종료 후 2/2 수렴 | 통과 |
+| `refactor-final-loss` | PktLag 100ms / PktLoss 5%에서 단발 flush 후 2/2 수렴 | 통과 |
+| `refactor-final-latejoin` | Dormant 상태에서 실행 완료 후 늦은 접속자의 현재 상태 수신, LateJoinMatch 확인 | 통과 |
+
+실제 키·마우스 입력과 화면 캡처는 수행하지 않았다. 구조 분리 후에도 패널 조작·입력 복귀·이미지 확대 및 이동·카메라 조작은 사용자 확인 전 미검증이다.
+
+이후 추가된 선언 배치 규칙을 공용·Dormancy 헤더에 적용했다. 함수/변수 순서, 역할별 묶음, RPC 묶음, 매크로 선언 간격을 정리했으며 UHT 및 Editor 빌드가 통과했다 (`Saved/Logs/DeclarationLayoutBuild.txt`). 이번 선언 정리에서는 네트워크 회귀 실행과 실제 조작 검증을 다시 수행하지 않았다.
+
+오버라이드 접근 수준도 UE 5.8.3의 부모 헤더와 대조했다. DormancyLab의 BeginPlay/EndPlay는 protected, DormancyClientComponent의 BeginPlay/EndPlay와 TechLabCharacter의 SetupPlayerInputComponent는 public으로 맞췄다. 나머지 오버라이드는 이미 일치했다. UHT 및 Editor 빌드 통과 (`Saved/Logs/OverrideAccessBuild.txt`); 접근 지정만 변경하여 실행·조작 검증은 반복하지 않았다.
+
+F1이 Unreal Editor의 렌더링 뷰 명령과 충돌하므로 패널 단축키를 F2로 변경했다. 코드, HUD 안내 문구, 허브 안내 문구, 사용 문서, 실행 스크립트의 표기를 함께 갱신했다. 기존 저장 맵의 안내 텍스트는 Editor에서 `Scripts/BuildDormancyMap.py`를 다시 실행해 저장해야 하며, 스크립트도 기존 TextRenderActor의 문구를 갱신하도록 수정했다.
+
+부모 동명 함수와 구현을 추가 점검하여 DormancyLab의 암묵적 `AActor::Reset` 재정의를 제거했다. 실험 초기화는 `ResetExperiment`로 분리하고 Actor의 `Reset`/`K2_OnReset`은 상속한 동작을 유지한다. Character의 입력 설정에는 `Super::SetupPlayerInputComponent`를 추가해 부모의 입력 컴포넌트 검사를 보존했다. UHT/Editor 빌드 통과 (`Saved/Logs/ParentContractBuild.txt`). 별도 서버+두 headless 클라이언트의 잘못된 설정/관찰자 요청 거부, 실행 중 설정 잠금, 정지→초기화→재실행과 2/2 최종 상태 일치도 통과했다 (`parent-contract-controls`, 256개, warm/stable/change 각 2초). 실제 이동·카메라·UI 조작을 검증한 결과는 아니다.
+
+수동 확인은 `Scripts/StartDormancyInteractive.ps1`로 시작한다. 허브/별도 서버+두 클라이언트에서 이동·점프·카메라, F2 패널 펼치기/접기 후 입력 복귀, MAIN의 전원 이동과 실험 조작, OBSERVER의 조작 제한/결과 열람을 확인한다. 기대 결과 상세는 DormancyDemo.md의 표 참조. 현재 실제 PNG 캡처가 없으므로 이미지 표시/확대 동작은 캡처 추가 후 검증한다.
+

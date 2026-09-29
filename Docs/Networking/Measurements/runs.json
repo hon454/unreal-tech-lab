@@ -1,0 +1,4571 @@
+[
+  {
+    "name": "dormancy-4096-pilot",
+    "run_id": "B836963940368C3981C5398550A7EA2E",
+    "conditions": {
+      "engine": "5.8.3-58210709+++UE5+Release-5.8",
+      "run": "B836963940368C3981C5398550A7EA2E",
+      "scenario": "1",
+      "dormancy": "1",
+      "continuous": "0",
+      "actors": "4096",
+      "percent": "1",
+      "interval": "1.000",
+      "seed": "74219",
+      "connections": "2",
+      "netmode": "1",
+      "warm": "2.000",
+      "stable": "4.000",
+      "change": "4.000",
+      "relevancy": "AlwaysRelevant",
+      "netupdate": "30"
+    },
+    "final": "Final state matched | 2/2 clients | convergence upper bound 0.480s | SHA1 over sorted ID/version/value; intermediate versions may coalesce.\nDigest=F7EAD7256749EC047CF4482687DAC14E0872E2A2\nSteps=4\nChanges=164\nFlushes=164\nWakes=0\nConnectionChanged=0\n",
+    "phases": {
+      "Stable": {
+        "trace_start": 28.201365,
+        "trace_end": 32.21497,
+        "complete_frames": 240,
+        "effective_frame_hz": 60.05885467463839,
+        "metrics": {
+          "replication_ms": {
+            "n": 240,
+            "mean": 0.08225124999995022,
+            "p95": 0.12350000000083128,
+            "maximum": 0.1756999999997788,
+            "stddev": 0.023853519132369293
+          },
+          "prioritize_process_ms": {
+            "n": 240,
+            "mean": 0.04547000000014734,
+            "p95": 0.07679999999865572,
+            "maximum": 0.12509999999821275,
+            "stddev": 0.01667414052796982
+          },
+          "consider_ms": {
+            "n": 240,
+            "mean": 0.012890833333371413,
+            "p95": 0.017299999999664806,
+            "maximum": 0.02719999999811762,
+            "stddev": 0.003065928182566222
+          },
+          "controller_ms": {
+            "n": 240,
+            "mean": 0.009790000000024316,
+            "p95": 0.001900000000887303,
+            "maximum": 0.31740000000013424,
+            "stddev": 0.04848629431497271
+          },
+          "mutation_ms": {
+            "n": 240,
+            "mean": 0.0,
+            "p95": 0.0,
+            "maximum": 0.0,
+            "stddev": 0.0
+          },
+          "flush_ms": {
+            "n": 240,
+            "mean": 0.0,
+            "p95": 0.0,
+            "maximum": 0.0,
+            "stddev": 0.0
+          },
+          "wake_ms": {
+            "n": 240,
+            "mean": 0.0,
+            "p95": 0.0,
+            "maximum": 0.0,
+            "stddev": 0.0
+          },
+          "gt_active_ms": {
+            "n": 240,
+            "mean": 1.1335441666667407,
+            "p95": 1.4582000000018525,
+            "maximum": 1.7734000000011463,
+            "stddev": 0.20627235166644783
+          },
+          "gt_frame_wall_ms": {
+            "n": 240,
+            "mean": 16.64990499999995,
+            "p95": 17.376599999998632,
+            "maximum": 17.9953000000026,
+            "stddev": 0.4067713260424394
+          }
+        },
+        "engine_scope_totals_seconds": {
+          "World Tick Time": 0.211485,
+          "Tick Time": 0.076694,
+          "ServerReplicateActors Time": 0.019832,
+          "Consider Actors Time": 0.003107,
+          "Process Prioritized Actors Time": 0.010975,
+          "Replicate Actor Time": 0.009901
+        },
+        "connections": {
+          "256": {
+            "bytes": 10340,
+            "packets": 234,
+            "elapsed": 4.013749000000001,
+            "bytes_per_second": 2576.1451451000044,
+            "sample_rate_stats": {
+              "n": 9,
+              "mean": 2575.6460940284564,
+              "p95": 2661.197977968317,
+              "maximum": 2661.197977968317,
+              "stddev": 55.43192478376884
+            }
+          },
+          "257": {
+            "bytes": 10597,
+            "packets": 241,
+            "elapsed": 4.013749000000001,
+            "bytes_per_second": 2640.1750582809236,
+            "sample_rate_stats": {
+              "n": 9,
+              "mean": 2616.8027935916684,
+              "p95": 2665.0680046937073,
+              "maximum": 2665.0680046937073,
+              "stddev": 86.9822403313033
+            }
+          }
+        }
+      },
+      "Change": {
+        "trace_start": 32.214971,
+        "trace_end": 36.223107,
+        "complete_frames": 241,
+        "effective_frame_hz": 60.37745529869922,
+        "metrics": {
+          "replication_ms": {
+            "n": 241,
+            "mean": 0.11486763485484901,
+            "p95": 0.22440000000045757,
+            "maximum": 2.2966999999951554,
+            "stddev": 0.22612003180026613
+          },
+          "prioritize_process_ms": {
+            "n": 241,
+            "mean": 0.07918464730270107,
+            "p95": 0.14769999999941774,
+            "maximum": 2.2156000000066456,
+            "stddev": 0.21872225950994606
+          },
+          "consider_ms": {
+            "n": 241,
+            "mean": 0.012897095435654265,
+            "p95": 0.02340000000344844,
+            "maximum": 0.04299999999801685,
+            "stddev": 0.005600947824051223
+          },
+          "controller_ms": {
+            "n": 241,
+            "mean": 0.01386804979246693,
+            "p95": 0.0017999999997186933,
+            "maximum": 0.35619999999880747,
+            "stddev": 0.06046013162907812
+          },
+          "mutation_ms": {
+            "n": 241,
+            "mean": 0.0039278008298709935,
+            "p95": 0.0,
+            "maximum": 0.25279999999838765,
+            "stddev": 0.030324006148448115
+          },
+          "flush_ms": {
+            "n": 241,
+            "mean": 0.003827385892235455,
+            "p95": 0.0,
+            "maximum": 0.24690000002891566,
+            "stddev": 0.0295509672195848
+          },
+          "wake_ms": {
+            "n": 241,
+            "mean": 0.0,
+            "p95": 0.0,
+            "maximum": 0.0,
+            "stddev": 0.0
+          },
+          "gt_active_ms": {
+            "n": 241,
+            "mean": 1.0489481327797388,
+            "p95": 1.6433000000048992,
+            "maximum": 5.011600000003114,
+            "stddev": 0.43900274810109713
+          },
+          "gt_frame_wall_ms": {
+            "n": 241,
+            "mean": 16.56206390041474,
+            "p95": 17.516600000000437,
+            "maximum": 21.02469999999812,
+            "stddev": 0.705698344891804
+          }
+        },
+        "engine_scope_totals_seconds": {
+          "World Tick Time": 0.19869,
+          "Tick Time": 0.067637,
+          "ServerReplicateActors Time": 0.027788,
+          "Consider Actors Time": 0.003119,
+          "Process Prioritized Actors Time": 0.019148,
+          "Replicate Actor Time": 0.016004,
+          "DormancySample": 0.006984
+        },
+        "connections": {
+          "256": {
+            "bytes": 27126,
+            "packets": 253,
+            "elapsed": 4.0072790000000005,
+            "bytes_per_second": 6769.1817814532,
+            "sample_rate_stats": {
+              "n": 8,
+              "mean": 6778.363223731258,
+              "p95": 11579.218429805187,
+              "maximum": 11579.218429805187,
+              "stddev": 4090.801197714493
+            }
+          },
+          "257": {
+            "bytes": 25560,
+            "packets": 247,
+            "elapsed": 4.0072790000000005,
+            "bytes_per_second": 6378.392919484767,
+            "sample_rate_stats": {
+              "n": 8,
+              "mean": 6390.9617684415525,
+              "p95": 10906.234514337159,
+              "maximum": 10906.234514337159,
+              "stddev": 3885.720772016045
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "name": "frequent-0.05-0-r1",
+    "run_id": "EBA50C504EAE7B851E2F94A1739679C8",
+    "conditions": {
+      "engine": "5.8.3-58210709+++UE5+Release-5.8",
+      "run": "EBA50C504EAE7B851E2F94A1739679C8",
+      "scenario": "2",
+      "dormancy": "0",
+      "continuous": "0",
+      "actors": "4096",
+      "percent": "10",
+      "interval": "0.050",
+      "seed": "74219",
+      "connections": "2",
+      "netmode": "1",
+      "warm": "3.000",
+      "stable": "6.000",
+      "change": "6.000",
+      "relevancy": "AlwaysRelevant",
+      "netupdate": "30"
+    },
+    "final": "Final state matched | 2/2 clients | convergence upper bound 1.967s | SHA1 over sorted ID/version/value; intermediate versions may coalesce.\nDigest=84103657117E09EEF99ABF83CCA67C8792829F83\nSteps=120\nChanges=49200\nFlushes=0\nWakes=0\nConnectionChanged=0\n",
+    "phases": {
+      "Stable": {
+        "trace_start": 28.440664,
+        "trace_end": 34.461625,
+        "complete_frames": 283,
+        "effective_frame_hz": 47.23007619262702,
+        "metrics": {
+          "replication_ms": {
+            "n": 283,
+            "mean": 9.193442049470157,
+            "p95": 12.64630000000011,
+            "maximum": 31.523699999993937,
+            "stddev": 2.3073348585777107
+          },
+          "prioritize_process_ms": {
+            "n": 283,
+            "mean": 6.776256890459521,
+            "p95": 9.683900000005963,
+            "maximum": 21.73360000000457,
+            "stddev": 1.7294199790131872
+          },
+          "consider_ms": {
+            "n": 283,
+            "mean": 1.0076646643110454,
+            "p95": 1.462000000003627,
+            "maximum": 5.2960000000013,
+            "stddev": 0.349317842254392
+          },
+          "controller_ms": {
+            "n": 283,
+            "mean": 0.015539929328658025,
+            "p95": 0.0035999999994373866,
+            "maximum": 0.48929999999813845,
+            "stddev": 0.06986712664637164
+          },
+          "mutation_ms": {
+            "n": 283,
+            "mean": 0.0,
+            "p95": 0.0,
+            "maximum": 0.0,
+            "stddev": 0.0
+          },
+          "flush_ms": {
+            "n": 283,
+            "mean": 0.0,
+            "p95": 0.0,
+            "maximum": 0.0,
+            "stddev": 0.0
+          },
+          "wake_ms": {
+            "n": 283,
+            "mean": 0.0,
+            "p95": 0.0,
+            "maximum": 0.0,
+            "stddev": 0.0
+          },
+          "gt_active_ms": {
+            "n": 283,
+            "mean": 10.259508833922228,
+            "p95": 14.278800000003145,
+            "maximum": 33.71549999999246,
+            "stddev": 2.492230586752458
+          },
+          "gt_frame_wall_ms": {
+            "n": 283,
+            "mean": 21.172501766784436,
+            "p95": 33.93239999999764,
+            "maximum": 52.34329999999687,
+            "stddev": 7.320767155263877
+          }
+        },
+        "engine_scope_totals_seconds": {
+          "World Tick Time": 2.839451,
+          "Tick Time": 0.092219,
+          "ServerReplicateActors Time": 2.609129,
+          "Consider Actors Time": 0.286047,
+          "Process Prioritized Actors Time": 1.922979,
+          "Replicate Actor Time": 1.660277,
+          "DormancySample": 1.55369
+        },
+        "connections": {
+          "256": {
+            "bytes": 12653,
+            "packets": 281,
+            "elapsed": 6.0209019999999995,
+            "bytes_per_second": 2101.512364758636,
+            "sample_rate_stats": {
+              "n": 13,
+              "mean": 2117.6516273315347,
+              "p95": 2849.7586042246667,
+              "maximum": 2849.7586042246667,
+              "stddev": 554.2478624525121
+            }
+          },
+          "257": {
+            "bytes": 12612,
+            "packets": 280,
+            "elapsed": 6.0209019999999995,
+            "bytes_per_second": 2094.7027538398734,
+            "sample_rate_stats": {
+              "n": 13,
+              "mean": 2112.1111824014542,
+              "p95": 2849.7586042246667,
+              "maximum": 2849.7586042246667,
+              "stddev": 550.1120541441483
+            }
+          }
+        }
+      },
+      "Change": {
+        "trace_start": 34.461626,
+        "trace_end": 40.469737,
+        "complete_frames": 202,
+        "effective_frame_hz": 33.80993853520548,
+        "metrics": {
+          "replication_ms": {
+            "n": 202,
+            "mean": 5.862614356435105,
+            "p95": 8.365300000001241,
+            "maximum": 11.521899999998197,
+            "stddev": 1.2221371437979354
+          },
+          "prioritize_process_ms": {
+            "n": 202,
+            "mean": 1.3276792079211284,
+            "p95": 1.9670999999945593,
+            "maximum": 5.335899999998617,
+            "stddev": 0.5033631086674902
+          },
+          "consider_ms": {
+            "n": 202,
+            "mean": 1.3986643564354504,
+            "p95": 2.11699999999837,
+            "maximum": 4.150199999997994,
+            "stddev": 0.44921605514042906
+          },
+          "controller_ms": {
+            "n": 202,
+            "mean": 0.0317475247524148,
+            "p95": 0.3105999999988285,
+            "maximum": 0.5353000000027919,
+            "stddev": 0.0887719926856398
+          },
+          "mutation_ms": {
+            "n": 202,
+            "mean": 0.00950396039587925,
+            "p95": 0.025199999996061706,
+            "maximum": 0.036999999998954536,
+            "stddev": 0.00918522413667298
+          },
+          "flush_ms": {
+            "n": 202,
+            "mean": 0.0,
+            "p95": 0.0,
+            "maximum": 0.0,
+            "stddev": 0.0
+          },
+          "wake_ms": {
+            "n": 202,
+            "mean": 0.0,
+            "p95": 0.0,
+            "maximum": 0.0,
+            "stddev": 0.0
+          },
+          "gt_active_ms": {
+            "n": 202,
+            "mean": 7.207763366336603,
+            "p95": 10.210700000001793,
+            "maximum": 22.287500000004457,
+            "stddev": 1.9403607784099575
+          },
+          "gt_frame_wall_ms": {
+            "n": 202,
+            "mean": 29.57659405940618,
+            "p95": 33.667299999997624,
+            "maximum": 47.87689999999856,
+            "stddev": 5.172955008711369
+          }
+        },
+        "engine_scope_totals_seconds": {
+          "World Tick Time": 1.394167,
+          "Tick Time": 0.076183,
+          "ServerReplicateActors Time": 1.193258,
+          "Consider Actors Time": 0.283475,
+          "Process Prioritized Actors Time": 0.274782,
+          "Replicate Actor Time": 0.247002,
+          "DormancySample": 0.237625
+        },
+        "connections": {
+          "256": {
+            "bytes": 339096,
+            "packets": 408,
+            "elapsed": 6.007050999999997,
+            "bytes_per_second": 56449.66223859264,
+            "sample_rate_stats": {
+              "n": 12,
+              "mean": 56639.91832141329,
+              "p95": 62959.64073151039,
+              "maximum": 62959.64073151039,
+              "stddev": 2665.1524659370543
+            }
+          },
+          "257": {
+            "bytes": 339089,
+            "packets": 408,
+            "elapsed": 6.007050999999997,
+            "bytes_per_second": 56448.496941344456,
+            "sample_rate_stats": {
+              "n": 12,
+              "mean": 56638.850853085845,
+              "p95": 62977.17172484569,
+              "maximum": 62977.17172484569,
+              "stddev": 2669.232900942126
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "name": "frequent-0.05-0-r2",
+    "run_id": "D2507E6E4416DAF4CC6F1AA1EA1235FC",
+    "conditions": {
+      "engine": "5.8.3-58210709+++UE5+Release-5.8",
+      "run": "D2507E6E4416DAF4CC6F1AA1EA1235FC",
+      "scenario": "2",
+      "dormancy": "0",
+      "continuous": "0",
+      "actors": "4096",
+      "percent": "10",
+      "interval": "0.050",
+      "seed": "74219",
+      "connections": "2",
+      "netmode": "1",
+      "warm": "3.000",
+      "stable": "6.000",
+      "change": "6.000",
+      "relevancy": "AlwaysRelevant",
+      "netupdate": "30"
+    },
+    "final": "Final state matched | 2/2 clients | convergence upper bound 0.432s | SHA1 over sorted ID/version/value; intermediate versions may coalesce.\nDigest=84103657117E09EEF99ABF83CCA67C8792829F83\nSteps=120\nChanges=49200\nFlushes=0\nWakes=0\nConnectionChanged=0\n",
+    "phases": {
+      "Stable": {
+        "trace_start": 29.891133,
+        "trace_end": 35.918375,
+        "complete_frames": 359,
+        "effective_frame_hz": 59.72954925952493,
+        "metrics": {
+          "replication_ms": {
+            "n": 359,
+            "mean": 8.529709470752014,
+            "p95": 11.656899999998416,
+            "maximum": 26.67120000000267,
+            "stddev": 2.071310577040224
+          },
+          "prioritize_process_ms": {
+            "n": 359,
+            "mean": 6.229829247910859,
+            "p95": 8.691400000010674,
+            "maximum": 18.5379999999995,
+            "stddev": 1.5840405543688285
+          },
+          "consider_ms": {
+            "n": 359,
+            "mean": 0.9477465181059059,
+            "p95": 1.1992999999961285,
+            "maximum": 4.146900000002063,
+            "stddev": 0.2311531422595248
+          },
+          "controller_ms": {
+            "n": 359,
+            "mean": 0.010436490250836757,
+            "p95": 0.001800000003271407,
+            "maximum": 0.33519999999498395,
+            "stddev": 0.05238074649393151
+          },
+          "mutation_ms": {
+            "n": 359,
+            "mean": 0.0,
+            "p95": 0.0,
+            "maximum": 0.0,
+            "stddev": 0.0
+          },
+          "flush_ms": {
+            "n": 359,
+            "mean": 0.0,
+            "p95": 0.0,
+            "maximum": 0.0,
+            "stddev": 0.0
+          },
+          "wake_ms": {
+            "n": 359,
+            "mean": 0.0,
+            "p95": 0.0,
+            "maximum": 0.0,
+            "stddev": 0.0
+          },
+          "gt_active_ms": {
+            "n": 359,
+            "mean": 9.63640529247915,
+            "p95": 12.884399999997243,
+            "maximum": 29.45819999999344,
+            "stddev": 2.1795467201732497
+          },
+          "gt_frame_wall_ms": {
+            "n": 359,
+            "mean": 16.74167520891375,
+            "p95": 22.791099999999176,
+            "maximum": 36.80379999999417,
+            "stddev": 3.324400334125604
+          }
+        },
+        "engine_scope_totals_seconds": {
+          "World Tick Time": 3.3644,
+          "Tick Time": 0.116954,
+          "ServerReplicateActors Time": 3.070593,
+          "Consider Actors Time": 0.341328,
+          "Process Prioritized Actors Time": 2.242458,
+          "Replicate Actor Time": 1.937567,
+          "DormancySample": 1.818088
+        },
+        "connections": {
+          "256": {
+            "bytes": 15860,
+            "packets": 359,
+            "elapsed": 6.027106,
+            "bytes_per_second": 2631.445340433701,
+            "sample_rate_stats": {
+              "n": 13,
+              "mean": 2639.777872002607,
+              "p95": 2779.119692125639,
+              "maximum": 2779.119692125639,
+              "stddev": 52.927985879275845
+            }
+          },
+          "257": {
+            "bytes": 15625,
+            "packets": 354,
+            "elapsed": 6.027106,
+            "bytes_per_second": 2592.4548199417763,
+            "sample_rate_stats": {
+              "n": 13,
+              "mean": 2595.981752855386,
+              "p95": 2779.119692125639,
+              "maximum": 2779.119692125639,
+              "stddev": 115.84251842837948
+            }
+          }
+        }
+      },
+      "Change": {
+        "trace_start": 35.918376,
+        "trace_end": 41.943128,
+        "complete_frames": 359,
+        "effective_frame_hz": 59.78996667400527,
+        "metrics": {
+          "replication_ms": {
+            "n": 359,
+            "mean": 6.501771587743656,
+            "p95": 7.701199999999631,
+            "maximum": 25.136600000003284,
+            "stddev": 1.2339125209957407
+          },
+          "prioritize_process_ms": {
+            "n": 359,
+            "mean": 1.7426172701951472,
+            "p95": 2.6146000000011327,
+            "maximum": 7.753899999997316,
+            "stddev": 0.6319620564703939
+          },
+          "consider_ms": {
+            "n": 359,
+            "mean": 1.238913927576442,
+            "p95": 1.4806000000007202,
+            "maximum": 8.460399999997037,
+            "stddev": 0.43857184791432097
+          },
+          "controller_ms": {
+            "n": 359,
+            "mean": 0.015523955431575191,
+            "p95": 0.021199999999055308,
+            "maximum": 0.4230999999990104,
+            "stddev": 0.059932596543423346
+          },
+          "mutation_ms": {
+            "n": 359,
+            "mean": 0.003870194985936001,
+            "p95": 0.01800000000429236,
+            "maximum": 0.02280000000354221,
+            "stddev": 0.0060223260336083025
+          },
+          "flush_ms": {
+            "n": 359,
+            "mean": 0.0,
+            "p95": 0.0,
+            "maximum": 0.0,
+            "stddev": 0.0
+          },
+          "wake_ms": {
+            "n": 359,
+            "mean": 0.0,
+            "p95": 0.0,
+            "maximum": 0.0,
+            "stddev": 0.0
+          },
+          "gt_active_ms": {
+            "n": 359,
+            "mean": 7.561678830083047,
+            "p95": 8.846700000006535,
+            "maximum": 29.64860000000158,
+            "stddev": 1.4346298808492537
+          },
+          "gt_frame_wall_ms": {
+            "n": 359,
+            "mean": 16.724733426183498,
+            "p95": 18.27300000000065,
+            "maximum": 39.64480000000492,
+            "stddev": 1.643860380833322
+          }
+        },
+        "engine_scope_totals_seconds": {
+          "World Tick Time": 2.629761,
+          "Tick Time": 0.114968,
+          "ServerReplicateActors Time": 2.342687,
+          "Consider Actors Time": 0.445792,
+          "Process Prioritized Actors Time": 0.63181,
+          "Replicate Actor Time": 0.568129,
+          "DormancySample": 0.545939
+        },
+        "connections": {
+          "256": {
+            "bytes": 594171,
+            "packets": 721,
+            "elapsed": 6.024355,
+            "bytes_per_second": 98628.15189343922,
+            "sample_rate_stats": {
+              "n": 13,
+              "mean": 98685.60831540432,
+              "p95": 99336.33511875584,
+              "maximum": 99336.33511875584,
+              "stddev": 804.5138622532453
+            }
+          },
+          "257": {
+            "bytes": 594177,
+            "packets": 721,
+            "elapsed": 6.024355,
+            "bytes_per_second": 98629.14785068277,
+            "sample_rate_stats": {
+              "n": 13,
+              "mean": 98687.25653429424,
+              "p95": 99355.73485220352,
+              "maximum": 99355.73485220352,
+              "stddev": 807.4208876420503
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "name": "frequent-0.05-0-r3",
+    "run_id": "69DDAFF4441AEEF23AEA8EA914A1AF95",
+    "conditions": {
+      "engine": "5.8.3-58210709+++UE5+Release-5.8",
+      "run": "69DDAFF4441AEEF23AEA8EA914A1AF95",
+      "scenario": "2",
+      "dormancy": "0",
+      "continuous": "0",
+      "actors": "4096",
+      "percent": "10",
+      "interval": "0.050",
+      "seed": "74219",
+      "connections": "2",
+      "netmode": "1",
+      "warm": "3.000",
+      "stable": "6.000",
+      "change": "6.000",
+      "relevancy": "AlwaysRelevant",
+      "netupdate": "30"
+    },
+    "final": "Final state matched | 2/2 clients | convergence upper bound 0.438s | SHA1 over sorted ID/version/value; intermediate versions may coalesce.\nDigest=84103657117E09EEF99ABF83CCA67C8792829F83\nSteps=120\nChanges=49200\nFlushes=0\nWakes=0\nConnectionChanged=0\n",
+    "phases": {
+      "Stable": {
+        "trace_start": 31.343847,
+        "trace_end": 37.360071,
+        "complete_frames": 360,
+        "effective_frame_hz": 60.00602460487031,
+        "metrics": {
+          "replication_ms": {
+            "n": 360,
+            "mean": 10.236443333333234,
+            "p95": 12.845699999999738,
+            "maximum": 15.258200000005218,
+            "stddev": 1.6052543379248638
+          },
+          "prioritize_process_ms": {
+            "n": 360,
+            "mean": 7.729880833333594,
+            "p95": 9.979900000004704,
+            "maximum": 12.010099999997692,
+            "stddev": 1.2863684500548467
+          },
+          "consider_ms": {
+            "n": 360,
+            "mean": 1.0316672222220349,
+            "p95": 1.3188999999940165,
+            "maximum": 1.8634000000012918,
+            "stddev": 0.16950484396011548
+          },
+          "controller_ms": {
+            "n": 360,
+            "mean": 0.01080472222223763,
+            "p95": 0.0015000000033182914,
+            "maximum": 0.37460000000066884,
+            "stddev": 0.054576918758911123
+          },
+          "mutation_ms": {
+            "n": 360,
+            "mean": 0.0,
+            "p95": 0.0,
+            "maximum": 0.0,
+            "stddev": 0.0
+          },
+          "flush_ms": {
+            "n": 360,
+            "mean": 0.0,
+            "p95": 0.0,
+            "maximum": 0.0,
+            "stddev": 0.0
+          },
+          "wake_ms": {
+            "n": 360,
+            "mean": 0.0,
+            "p95": 0.0,
+            "maximum": 0.0,
+            "stddev": 0.0
+          },
+          "gt_active_ms": {
+            "n": 360,
+            "mean": 11.402943611110691,
+            "p95": 14.180499999994822,
+            "maximum": 18.2493000000008,
+            "stddev": 1.7815355365787282
+          },
+          "gt_frame_wall_ms": {
+            "n": 360,
+            "mean": 16.664470555555482,
+            "p95": 20.340600000004372,
+            "maximum": 24.404100000005258,
+            "stddev": 2.0872049072949275
+          }
+        },
+        "engine_scope_totals_seconds": {
+          "World Tick Time": 4.009536,
+          "Tick Time": 0.132743,
+          "ServerReplicateActors Time": 3.692906,
+          "Consider Actors Time": 0.372302,
+          "Process Prioritized Actors Time": 2.788551,
+          "Replicate Actor Time": 2.407958,
+          "DormancySample": 2.256284
+        },
+        "connections": {
+          "256": {
+            "bytes": 15879,
+            "packets": 361,
+            "elapsed": 6.015986999999999,
+            "bytes_per_second": 2639.4671398059872,
+            "sample_rate_stats": {
+              "n": 12,
+              "mean": 2637.0431274058446,
+              "p95": 2665.6603050234307,
+              "maximum": 2665.6603050234307,
+              "stddev": 15.651755871506236
+            }
+          },
+          "257": {
+            "bytes": 15807,
+            "packets": 359,
+            "elapsed": 6.015986999999999,
+            "bytes_per_second": 2627.4990288376625,
+            "sample_rate_stats": {
+              "n": 12,
+              "mean": 2625.8045346714525,
+              "p95": 2665.6603050234307,
+              "maximum": 2665.6603050234307,
+              "stddev": 39.75692863034129
+            }
+          }
+        }
+      },
+      "Change": {
+        "trace_start": 37.360072,
+        "trace_end": 43.371543,
+        "complete_frames": 359,
+        "effective_frame_hz": 59.94773659472175,
+        "metrics": {
+          "replication_ms": {
+            "n": 359,
+            "mean": 6.87354401114205,
+            "p95": 8.628100000002803,
+            "maximum": 12.300400000000877,
+            "stddev": 1.0383931305840008
+          },
+          "prioritize_process_ms": {
+            "n": 359,
+            "mean": 2.0246919220056014,
+            "p95": 2.9376999999968234,
+            "maximum": 9.673300000002882,
+            "stddev": 0.8658061682431775
+          },
+          "consider_ms": {
+            "n": 359,
+            "mean": 1.3210821727021897,
+            "p95": 1.8151000000017348,
+            "maximum": 3.676199999993912,
+            "stddev": 0.3131010464176215
+          },
+          "controller_ms": {
+            "n": 359,
+            "mean": 0.03168412256258475,
+            "p95": 0.018699999998261774,
+            "maximum": 6.354500000000485,
+            "stddev": 0.3395115500602387
+          },
+          "mutation_ms": {
+            "n": 359,
+            "mean": 0.0032548746518066113,
+            "p95": 0.01160000000055561,
+            "maximum": 0.02260000000120499,
+            "stddev": 0.004954888385044419
+          },
+          "flush_ms": {
+            "n": 359,
+            "mean": 0.0,
+            "p95": 0.0,
+            "maximum": 0.0,
+            "stddev": 0.0
+          },
+          "wake_ms": {
+            "n": 359,
+            "mean": 0.0,
+            "p95": 0.0,
+            "maximum": 0.0,
+            "stddev": 0.0
+          },
+          "gt_active_ms": {
+            "n": 359,
+            "mean": 7.916728412256472,
+            "p95": 9.776399999992691,
+            "maximum": 13.920599999991623,
+            "stddev": 1.1863479765571368
+          },
+          "gt_frame_wall_ms": {
+            "n": 359,
+            "mean": 16.680700557103084,
+            "p95": 18.806899999994187,
+            "maximum": 22.480799999996748,
+            "stddev": 1.270103854241195
+          }
+        },
+        "engine_scope_totals_seconds": {
+          "World Tick Time": 2.765205,
+          "Tick Time": 0.116918,
+          "ServerReplicateActors Time": 2.477802,
+          "Consider Actors Time": 0.475452,
+          "Process Prioritized Actors Time": 0.734225,
+          "Replicate Actor Time": 0.658595,
+          "DormancySample": 0.631436
+        },
+        "connections": {
+          "256": {
+            "bytes": 593095,
+            "packets": 720,
+            "elapsed": 6.011330999999998,
+            "bytes_per_second": 98662.84188975788,
+            "sample_rate_stats": {
+              "n": 13,
+              "mean": 98144.91188938887,
+              "p95": 99321.29156506753,
+              "maximum": 99321.29156506753,
+              "stddev": 2761.495500685013
+            }
+          },
+          "257": {
+            "bytes": 593104,
+            "packets": 720,
+            "elapsed": 6.011330999999998,
+            "bytes_per_second": 98664.33906234746,
+            "sample_rate_stats": {
+              "n": 13,
+              "mean": 98147.56504330697,
+              "p95": 99296.05355118273,
+              "maximum": 99296.05355118273,
+              "stddev": 2771.660608387761
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "name": "frequent-0.05-1-r1",
+    "run_id": "21F30D164CB45E5B977CD9BAC14B36AC",
+    "conditions": {
+      "engine": "5.8.3-58210709+++UE5+Release-5.8",
+      "run": "21F30D164CB45E5B977CD9BAC14B36AC",
+      "scenario": "2",
+      "dormancy": "1",
+      "continuous": "0",
+      "actors": "4096",
+      "percent": "10",
+      "interval": "0.050",
+      "seed": "74219",
+      "connections": "2",
+      "netmode": "1",
+      "warm": "3.000",
+      "stable": "6.000",
+      "change": "6.000",
+      "relevancy": "AlwaysRelevant",
+      "netupdate": "30"
+    },
+    "final": "Final state matched | 2/2 clients | convergence upper bound 1.472s | SHA1 over sorted ID/version/value; intermediate versions may coalesce.\nDigest=84103657117E09EEF99ABF83CCA67C8792829F83\nSteps=120\nChanges=49200\nFlushes=49200\nWakes=0\nConnectionChanged=0\n",
+    "phases": {
+      "Stable": {
+        "trace_start": 28.720874,
+        "trace_end": 34.726571,
+        "complete_frames": 361,
+        "effective_frame_hz": 60.28066040953408,
+        "metrics": {
+          "replication_ms": {
+            "n": 361,
+            "mean": 0.0793952908588359,
+            "p95": 0.11400000000350019,
+            "maximum": 0.2539999999982001,
+            "stddev": 0.023010970933663083
+          },
+          "prioritize_process_ms": {
+            "n": 361,
+            "mean": 0.04384349030451322,
+            "p95": 0.07169999999945276,
+            "maximum": 0.1468000000031111,
+            "stddev": 0.015577081384527762
+          },
+          "consider_ms": {
+            "n": 361,
+            "mean": 0.012582271468122967,
+            "p95": 0.01650000000097407,
+            "maximum": 0.04660000000455966,
+            "stddev": 0.003321080203082887
+          },
+          "controller_ms": {
+            "n": 361,
+            "mean": 0.030418559556694348,
+            "p95": 0.0017999999997186933,
+            "maximum": 7.303200000002619,
+            "stddev": 0.38752187560360885
+          },
+          "mutation_ms": {
+            "n": 361,
+            "mean": 0.0,
+            "p95": 0.0,
+            "maximum": 0.0,
+            "stddev": 0.0
+          },
+          "flush_ms": {
+            "n": 361,
+            "mean": 0.0,
+            "p95": 0.0,
+            "maximum": 0.0,
+            "stddev": 0.0
+          },
+          "wake_ms": {
+            "n": 361,
+            "mean": 0.0,
+            "p95": 0.0,
+            "maximum": 0.0,
+            "stddev": 0.0
+          },
+          "gt_active_ms": {
+            "n": 361,
+            "mean": 1.0916429362880875,
+            "p95": 1.441400000004478,
+            "maximum": 9.082300000002874,
+            "stddev": 0.4703960161529828
+          },
+          "gt_frame_wall_ms": {
+            "n": 361,
+            "mean": 16.588675900277096,
+            "p95": 17.212300000000624,
+            "maximum": 24.77269999999976,
+            "stddev": 0.6938708635063358
+          }
+        },
+        "engine_scope_totals_seconds": {
+          "World Tick Time": 0.308902,
+          "Tick Time": 0.110968,
+          "ServerReplicateActors Time": 0.028771,
+          "Consider Actors Time": 0.004558,
+          "Process Prioritized Actors Time": 0.015902,
+          "Replicate Actor Time": 0.014355
+        },
+        "connections": {
+          "256": {
+            "bytes": 15694,
+            "packets": 356,
+            "elapsed": 6.0057420000000015,
+            "bytes_per_second": 2613.1658669320122,
+            "sample_rate_stats": {
+              "n": 12,
+              "mean": 2603.5311056062146,
+              "p95": 2674.6362847869464,
+              "maximum": 2674.6362847869464,
+              "stddev": 95.96232869648436
+            }
+          },
+          "257": {
+            "bytes": 15865,
+            "packets": 360,
+            "elapsed": 6.0057420000000015,
+            "bytes_per_second": 2641.638618508753,
+            "sample_rate_stats": {
+              "n": 12,
+              "mean": 2645.844942173226,
+              "p95": 2727.512311908029,
+              "maximum": 2727.512311908029,
+              "stddev": 53.85975059264416
+            }
+          }
+        }
+      },
+      "Change": {
+        "trace_start": 34.726571,
+        "trace_end": 40.749308,
+        "complete_frames": 360,
+        "effective_frame_hz": 59.86786065575832,
+        "metrics": {
+          "replication_ms": {
+            "n": 360,
+            "mean": 7.261846111111067,
+            "p95": 10.26740000000359,
+            "maximum": 12.223400000003437,
+            "stddev": 1.92358572190378
+          },
+          "prioritize_process_ms": {
+            "n": 360,
+            "mean": 1.1999716666667757,
+            "p95": 1.5166000000021995,
+            "maximum": 2.136399999997707,
+            "stddev": 0.21285349186701913
+          },
+          "consider_ms": {
+            "n": 360,
+            "mean": 1.781201111111012,
+            "p95": 2.3944000000000187,
+            "maximum": 3.990299999998115,
+            "stddev": 0.4371861934490099
+          },
+          "controller_ms": {
+            "n": 360,
+            "mean": 0.27502361111139745,
+            "p95": 1.0187000000030366,
+            "maximum": 2.2560999999967635,
+            "stddev": 0.43861867293694073
+          },
+          "mutation_ms": {
+            "n": 360,
+            "mean": 0.26509722222224735,
+            "p95": 1.0175000000032242,
+            "maximum": 2.254699999994614,
+            "stddev": 0.43188656458829716
+          },
+          "flush_ms": {
+            "n": 360,
+            "mean": 0.2515202777779082,
+            "p95": 0.9705999999738424,
+            "maximum": 2.200099999960514,
+            "stddev": 0.413845708946217
+          },
+          "wake_ms": {
+            "n": 360,
+            "mean": 0.0,
+            "p95": 0.0,
+            "maximum": 0.0,
+            "stddev": 0.0
+          },
+          "gt_active_ms": {
+            "n": 360,
+            "mean": 9.472420000000112,
+            "p95": 13.32649999999802,
+            "maximum": 15.693900000002259,
+            "stddev": 2.4233491866724415
+          },
+          "gt_frame_wall_ms": {
+            "n": 360,
+            "mean": 16.7030508333335,
+            "p95": 20.144600000001844,
+            "maximum": 26.36100000000141,
+            "stddev": 2.348524799299295
+          }
+        },
+        "engine_scope_totals_seconds": {
+          "World Tick Time": 3.32221,
+          "Tick Time": 0.102045,
+          "ServerReplicateActors Time": 2.614409,
+          "Consider Actors Time": 0.641253,
+          "Process Prioritized Actors Time": 0.432088,
+          "Replicate Actor Time": 0.292051,
+          "DormancySample": 0.284856
+        },
+        "connections": {
+          "256": {
+            "bytes": 595840,
+            "packets": 723,
+            "elapsed": 6.022511999999999,
+            "bytes_per_second": 98935.46081767876,
+            "sample_rate_stats": {
+              "n": 12,
+              "mean": 98939.81914519971,
+              "p95": 99262.8260199024,
+              "maximum": 99262.8260199024,
+              "stddev": 218.06060540877803
+            }
+          },
+          "257": {
+            "bytes": 595734,
+            "packets": 723,
+            "elapsed": 6.022511999999999,
+            "bytes_per_second": 98917.8601885725,
+            "sample_rate_stats": {
+              "n": 12,
+              "mean": 98922.23659843815,
+              "p95": 99224.45059891845,
+              "maximum": 99224.45059891845,
+              "stddev": 213.0935962611761
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "name": "frequent-0.05-1-r2",
+    "run_id": "A95786D143BE368698C92BB2F2A42071",
+    "conditions": {
+      "engine": "5.8.3-58210709+++UE5+Release-5.8",
+      "run": "A95786D143BE368698C92BB2F2A42071",
+      "scenario": "2",
+      "dormancy": "1",
+      "continuous": "0",
+      "actors": "4096",
+      "percent": "10",
+      "interval": "0.050",
+      "seed": "74219",
+      "connections": "2",
+      "netmode": "1",
+      "warm": "3.000",
+      "stable": "6.000",
+      "change": "6.000",
+      "relevancy": "AlwaysRelevant",
+      "netupdate": "30"
+    },
+    "final": "Final state matched | 2/2 clients | convergence upper bound 1.455s | SHA1 over sorted ID/version/value; intermediate versions may coalesce.\nDigest=84103657117E09EEF99ABF83CCA67C8792829F83\nSteps=120\nChanges=49200\nFlushes=49200\nWakes=0\nConnectionChanged=0\n",
+    "phases": {
+      "Stable": {
+        "trace_start": 28.643425,
+        "trace_end": 34.647146,
+        "complete_frames": 363,
+        "effective_frame_hz": 60.6386928182138,
+        "metrics": {
+          "replication_ms": {
+            "n": 363,
+            "mean": 0.0716057851239042,
+            "p95": 0.1125000000001819,
+            "maximum": 0.16450000000034493,
+            "stddev": 0.02171909933297866
+          },
+          "prioritize_process_ms": {
+            "n": 363,
+            "mean": 0.04073223140475885,
+            "p95": 0.07220000000174309,
+            "maximum": 0.10680000000462542,
+            "stddev": 0.014516764255441118
+          },
+          "consider_ms": {
+            "n": 363,
+            "mean": 0.011252341598008078,
+            "p95": 0.015499999999946112,
+            "maximum": 0.03900000000101045,
+            "stddev": 0.0030536933122067103
+          },
+          "controller_ms": {
+            "n": 363,
+            "mean": 0.010561707988980873,
+            "p95": 0.0015999999973814738,
+            "maximum": 0.34050000000007685,
+            "stddev": 0.05329638429928622
+          },
+          "mutation_ms": {
+            "n": 363,
+            "mean": 0.0,
+            "p95": 0.0,
+            "maximum": 0.0,
+            "stddev": 0.0
+          },
+          "flush_ms": {
+            "n": 363,
+            "mean": 0.0,
+            "p95": 0.0,
+            "maximum": 0.0,
+            "stddev": 0.0
+          },
+          "wake_ms": {
+            "n": 363,
+            "mean": 0.0,
+            "p95": 0.0,
+            "maximum": 0.0,
+            "stddev": 0.0
+          },
+          "gt_active_ms": {
+            "n": 363,
+            "mean": 0.9612217630852862,
+            "p95": 1.3171999999990192,
+            "maximum": 1.519599999998178,
+            "stddev": 0.17933899147170299
+          },
+          "gt_frame_wall_ms": {
+            "n": 363,
+            "mean": 16.490753168044094,
+            "p95": 17.28079999999821,
+            "maximum": 17.895200000001665,
+            "stddev": 0.4046163160513988
+          }
+        },
+        "engine_scope_totals_seconds": {
+          "World Tick Time": 0.272386,
+          "Tick Time": 0.101749,
+          "ServerReplicateActors Time": 0.026121,
+          "Consider Actors Time": 0.004105,
+          "Process Prioritized Actors Time": 0.014875,
+          "Replicate Actor Time": 0.013423
+        },
+        "connections": {
+          "256": {
+            "bytes": 15681,
+            "packets": 357,
+            "elapsed": 6.003976999999999,
+            "bytes_per_second": 2611.768832558819,
+            "sample_rate_stats": {
+              "n": 12,
+              "mean": 2610.5374601469043,
+              "p95": 2699.9128014028174,
+              "maximum": 2699.9128014028174,
+              "stddev": 73.85818372999788
+            }
+          },
+          "257": {
+            "bytes": 15764,
+            "packets": 359,
+            "elapsed": 6.003976999999999,
+            "bytes_per_second": 2625.5930027713302,
+            "sample_rate_stats": {
+              "n": 12,
+              "mean": 2632.1101774343815,
+              "p95": 2725.818068895938,
+              "maximum": 2725.818068895938,
+              "stddev": 75.39906389340256
+            }
+          }
+        }
+      },
+      "Change": {
+        "trace_start": 34.647147,
+        "trace_end": 40.663582,
+        "complete_frames": 359,
+        "effective_frame_hz": 59.755441119909506,
+        "metrics": {
+          "replication_ms": {
+            "n": 359,
+            "mean": 7.250168523676891,
+            "p95": 10.18049999999704,
+            "maximum": 12.257200000000523,
+            "stddev": 1.9343759182086298
+          },
+          "prioritize_process_ms": {
+            "n": 359,
+            "mean": 1.1863782729804802,
+            "p95": 1.5221000000025242,
+            "maximum": 2.07149999999956,
+            "stddev": 0.2199261823244181
+          },
+          "consider_ms": {
+            "n": 359,
+            "mean": 1.8464646239557383,
+            "p95": 2.3884000000009564,
+            "maximum": 2.6829999999975485,
+            "stddev": 0.38027946809796775
+          },
+          "controller_ms": {
+            "n": 359,
+            "mean": 0.27508802228392887,
+            "p95": 0.9675999999956275,
+            "maximum": 2.177400000000773,
+            "stddev": 0.43463915245284374
+          },
+          "mutation_ms": {
+            "n": 359,
+            "mean": 0.2650434540388889,
+            "p95": 0.9665999999981523,
+            "maximum": 2.176299999995024,
+            "stddev": 0.4300951594136498
+          },
+          "flush_ms": {
+            "n": 359,
+            "mean": 0.25163203342624174,
+            "p95": 0.9352999999379108,
+            "maximum": 2.127000000079704,
+            "stddev": 0.4121130500021899
+          },
+          "wake_ms": {
+            "n": 359,
+            "mean": 0.0,
+            "p95": 0.0,
+            "maximum": 0.0,
+            "stddev": 0.0
+          },
+          "gt_active_ms": {
+            "n": 359,
+            "mean": 9.497576044568179,
+            "p95": 13.7274000000005,
+            "maximum": 16.550199999997517,
+            "stddev": 2.5224324141045225
+          },
+          "gt_frame_wall_ms": {
+            "n": 359,
+            "mean": 16.734472980501515,
+            "p95": 20.276000000002625,
+            "maximum": 24.86770000000149,
+            "stddev": 2.2866692040106087
+          }
+        },
+        "engine_scope_totals_seconds": {
+          "World Tick Time": 3.322601,
+          "Tick Time": 0.101423,
+          "ServerReplicateActors Time": 2.602931,
+          "Consider Actors Time": 0.662897,
+          "Process Prioritized Actors Time": 0.425994,
+          "Replicate Actor Time": 0.284665,
+          "DormancySample": 0.277685
+        },
+        "connections": {
+          "256": {
+            "bytes": 594635,
+            "packets": 721,
+            "elapsed": 6.015797999999997,
+            "bytes_per_second": 98845.57293978294,
+            "sample_rate_stats": {
+              "n": 12,
+              "mean": 98846.61703108563,
+              "p95": 99454.84833820802,
+              "maximum": 99454.84833820802,
+              "stddev": 424.0399084776518
+            }
+          },
+          "257": {
+            "bytes": 594660,
+            "packets": 721,
+            "elapsed": 6.015797999999997,
+            "bytes_per_second": 98849.72866442661,
+            "sample_rate_stats": {
+              "n": 12,
+              "mean": 98852.61741522553,
+              "p95": 99454.84833820802,
+              "maximum": 99454.84833820802,
+              "stddev": 407.97884302209815
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "name": "frequent-0.05-1-r3",
+    "run_id": "D7C412C1483ECAEC14F0F7B7B6FB7D9B",
+    "conditions": {
+      "engine": "5.8.3-58210709+++UE5+Release-5.8",
+      "run": "D7C412C1483ECAEC14F0F7B7B6FB7D9B",
+      "scenario": "2",
+      "dormancy": "1",
+      "continuous": "0",
+      "actors": "4096",
+      "percent": "10",
+      "interval": "0.050",
+      "seed": "74219",
+      "connections": "2",
+      "netmode": "1",
+      "warm": "3.000",
+      "stable": "6.000",
+      "change": "6.000",
+      "relevancy": "AlwaysRelevant",
+      "netupdate": "30"
+    },
+    "final": "Final state matched | 2/2 clients | convergence upper bound 1.443s | SHA1 over sorted ID/version/value; intermediate versions may coalesce.\nDigest=84103657117E09EEF99ABF83CCA67C8792829F83\nSteps=120\nChanges=49200\nFlushes=49200\nWakes=0\nConnectionChanged=0\n",
+    "phases": {
+      "Stable": {
+        "trace_start": 29.805034,
+        "trace_end": 35.828486,
+        "complete_frames": 363,
+        "effective_frame_hz": 60.4366734462851,
+        "metrics": {
+          "replication_ms": {
+            "n": 363,
+            "mean": 0.07895840220407059,
+            "p95": 0.12530000000054997,
+            "maximum": 0.4613000000048828,
+            "stddev": 0.03183008245088875
+          },
+          "prioritize_process_ms": {
+            "n": 363,
+            "mean": 0.04495647382899031,
+            "p95": 0.07869999999954302,
+            "maximum": 0.31569999999447873,
+            "stddev": 0.021827643042610114
+          },
+          "consider_ms": {
+            "n": 363,
+            "mean": 0.011811294765938701,
+            "p95": 0.01639999999980546,
+            "maximum": 0.1297999999998467,
+            "stddev": 0.0073981600839427815
+          },
+          "controller_ms": {
+            "n": 363,
+            "mean": 0.011483471074161233,
+            "p95": 0.0015999999973814738,
+            "maximum": 0.4594000000004428,
+            "stddev": 0.061153311119161766
+          },
+          "mutation_ms": {
+            "n": 363,
+            "mean": 0.0,
+            "p95": 0.0,
+            "maximum": 0.0,
+            "stddev": 0.0
+          },
+          "flush_ms": {
+            "n": 363,
+            "mean": 0.0,
+            "p95": 0.0,
+            "maximum": 0.0,
+            "stddev": 0.0
+          },
+          "wake_ms": {
+            "n": 363,
+            "mean": 0.0,
+            "p95": 0.0,
+            "maximum": 0.0,
+            "stddev": 0.0
+          },
+          "gt_active_ms": {
+            "n": 363,
+            "mean": 1.0398085399449872,
+            "p95": 1.4094999999940683,
+            "maximum": 10.754400000003272,
+            "stddev": 0.6152760777350791
+          },
+          "gt_frame_wall_ms": {
+            "n": 363,
+            "mean": 16.54579586776866,
+            "p95": 17.22920000000272,
+            "maximum": 25.83760000000268,
+            "stddev": 0.9070849081636547
+          }
+        },
+        "engine_scope_totals_seconds": {
+          "World Tick Time": 0.288254,
+          "Tick Time": 0.109491,
+          "ServerReplicateActors Time": 0.02884,
+          "Consider Actors Time": 0.00431,
+          "Process Prioritized Actors Time": 0.016442,
+          "Replicate Actor Time": 0.01481
+        },
+        "connections": {
+          "256": {
+            "bytes": 15856,
+            "packets": 360,
+            "elapsed": 6.023377,
+            "bytes_per_second": 2632.4103571800338,
+            "sample_rate_stats": {
+              "n": 12,
+              "mean": 2634.6172713237684,
+              "p95": 2711.5310122774254,
+              "maximum": 2711.5310122774254,
+              "stddev": 60.70716509555825
+            }
+          },
+          "257": {
+            "bytes": 15761,
+            "packets": 358,
+            "elapsed": 6.023377,
+            "bytes_per_second": 2616.6384737332564,
+            "sample_rate_stats": {
+              "n": 12,
+              "mean": 2610.245903179681,
+              "p95": 2663.368232641207,
+              "maximum": 2663.368232641207,
+              "stddev": 86.2976004524906
+            }
+          }
+        }
+      },
+      "Change": {
+        "trace_start": 35.828487,
+        "trace_end": 41.85457,
+        "complete_frames": 359,
+        "effective_frame_hz": 59.660951961782615,
+        "metrics": {
+          "replication_ms": {
+            "n": 359,
+            "mean": 8.732076880222573,
+            "p95": 12.79490000000294,
+            "maximum": 14.492799999999306,
+            "stddev": 2.4565099214279065
+          },
+          "prioritize_process_ms": {
+            "n": 359,
+            "mean": 1.4896972144847138,
+            "p95": 2.0820999999955347,
+            "maximum": 2.4506999999971413,
+            "stddev": 0.3191074125092993
+          },
+          "consider_ms": {
+            "n": 359,
+            "mean": 2.1331947075205275,
+            "p95": 3.0531999999965365,
+            "maximum": 3.6775000000019986,
+            "stddev": 0.5328794047435872
+          },
+          "controller_ms": {
+            "n": 359,
+            "mean": 0.3270727019500172,
+            "p95": 1.367699999995864,
+            "maximum": 3.216099999995947,
+            "stddev": 0.5417495387837966
+          },
+          "mutation_ms": {
+            "n": 359,
+            "mean": 0.31542590529252273,
+            "p95": 1.2619999999969878,
+            "maximum": 3.214799999994966,
+            "stddev": 0.5323230976097995
+          },
+          "flush_ms": {
+            "n": 359,
+            "mean": 0.2999846796684127,
+            "p95": 1.2128999999703183,
+            "maximum": 3.1537999999358135,
+            "stddev": 0.5125393156932554
+          },
+          "wake_ms": {
+            "n": 359,
+            "mean": 0.0,
+            "p95": 0.0,
+            "maximum": 0.0,
+            "stddev": 0.0
+          },
+          "gt_active_ms": {
+            "n": 359,
+            "mean": 11.355657660167175,
+            "p95": 16.15610000000345,
+            "maximum": 18.973199999997803,
+            "stddev": 2.9714284473276393
+          },
+          "gt_frame_wall_ms": {
+            "n": 359,
+            "mean": 16.760832033426215,
+            "p95": 21.47409999999894,
+            "maximum": 23.966399999999055,
+            "stddev": 2.6505527582679744
+          }
+        },
+        "engine_scope_totals_seconds": {
+          "World Tick Time": 3.989994,
+          "Tick Time": 0.1158,
+          "ServerReplicateActors Time": 3.134921,
+          "Consider Actors Time": 0.76583,
+          "Process Prioritized Actors Time": 0.534877,
+          "Replicate Actor Time": 0.36161,
+          "DormancySample": 0.352165
+        },
+        "connections": {
+          "256": {
+            "bytes": 594251,
+            "packets": 721,
+            "elapsed": 6.025407000000005,
+            "bytes_per_second": 98624.2091198154,
+            "sample_rate_stats": {
+              "n": 12,
+              "mean": 98622.17519923994,
+              "p95": 99363.7405703477,
+              "maximum": 99363.7405703477,
+              "stddev": 426.510159034025
+            }
+          },
+          "257": {
+            "bytes": 594196,
+            "packets": 721,
+            "elapsed": 6.025407000000005,
+            "bytes_per_second": 98615.0811057244,
+            "sample_rate_stats": {
+              "n": 12,
+              "mean": 98613.67195982125,
+              "p95": 99228.20143439033,
+              "maximum": 99228.20143439033,
+              "stddev": 428.07088967066255
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "name": "frequent-0.1-0-r1",
+    "run_id": "8654BFDD41BF39FDE032718C3CC20D56",
+    "conditions": {
+      "engine": "5.8.3-58210709+++UE5+Release-5.8",
+      "run": "8654BFDD41BF39FDE032718C3CC20D56",
+      "scenario": "2",
+      "dormancy": "0",
+      "continuous": "0",
+      "actors": "4096",
+      "percent": "10",
+      "interval": "0.100",
+      "seed": "74219",
+      "connections": "2",
+      "netmode": "1",
+      "warm": "3.000",
+      "stable": "6.000",
+      "change": "6.000",
+      "relevancy": "AlwaysRelevant",
+      "netupdate": "30"
+    },
+    "final": "Final state matched | 2/2 clients | convergence upper bound 0.464s | SHA1 over sorted ID/version/value; intermediate versions may coalesce.\nDigest=5827932411935698CC1FB5A0C0F255AF6DD723E8\nSteps=60\nChanges=24600\nFlushes=0\nWakes=0\nConnectionChanged=0\n",
+    "phases": {
+      "Stable": {
+        "trace_start": 27.736009,
+        "trace_end": 33.748725,
+        "complete_frames": 359,
+        "effective_frame_hz": 59.88528381704462,
+        "metrics": {
+          "replication_ms": {
+            "n": 359,
+            "mean": 7.810174373258941,
+            "p95": 11.032100000001321,
+            "maximum": 25.547199999998327,
+            "stddev": 1.737344321424092
+          },
+          "prioritize_process_ms": {
+            "n": 359,
+            "mean": 5.734428412256379,
+            "p95": 8.112500000002854,
+            "maximum": 17.496700000002363,
+            "stddev": 1.287377795089973
+          },
+          "consider_ms": {
+            "n": 359,
+            "mean": 0.8615520891364594,
+            "p95": 1.101399999999586,
+            "maximum": 4.052200000000283,
+            "stddev": 0.21648048588908417
+          },
+          "controller_ms": {
+            "n": 359,
+            "mean": 0.01070306406686202,
+            "p95": 0.0015000000033182914,
+            "maximum": 0.35940000000067585,
+            "stddev": 0.05394625368520077
+          },
+          "mutation_ms": {
+            "n": 359,
+            "mean": 0.0,
+            "p95": 0.0,
+            "maximum": 0.0,
+            "stddev": 0.0
+          },
+          "flush_ms": {
+            "n": 359,
+            "mean": 0.0,
+            "p95": 0.0,
+            "maximum": 0.0,
+            "stddev": 0.0
+          },
+          "wake_ms": {
+            "n": 359,
+            "mean": 0.0,
+            "p95": 0.0,
+            "maximum": 0.0,
+            "stddev": 0.0
+          },
+          "gt_active_ms": {
+            "n": 359,
+            "mean": 8.687386350974792,
+            "p95": 11.942200000000014,
+            "maximum": 28.699599999999492,
+            "stddev": 1.8522983090796699
+          },
+          "gt_frame_wall_ms": {
+            "n": 359,
+            "mean": 16.698212534818786,
+            "p95": 22.537600000003266,
+            "maximum": 36.380999999998664,
+            "stddev": 2.72477167758227
+          }
+        },
+        "engine_scope_totals_seconds": {
+          "World Tick Time": 3.052537,
+          "Tick Time": 0.100816,
+          "ServerReplicateActors Time": 2.812051,
+          "Consider Actors Time": 0.310266,
+          "Process Prioritized Actors Time": 2.064605,
+          "Replicate Actor Time": 1.790989,
+          "DormancySample": 1.674428
+        },
+        "connections": {
+          "256": {
+            "bytes": 15803,
+            "packets": 358,
+            "elapsed": 6.012668999999999,
+            "bytes_per_second": 2628.2837122748656,
+            "sample_rate_stats": {
+              "n": 13,
+              "mean": 2644.3317457940657,
+              "p95": 2906.1803975750026,
+              "maximum": 2906.1803975750026,
+              "stddev": 87.58537582806377
+            }
+          },
+          "257": {
+            "bytes": 15620,
+            "packets": 353,
+            "elapsed": 6.012668999999999,
+            "bytes_per_second": 2597.8479773292033,
+            "sample_rate_stats": {
+              "n": 13,
+              "mean": 2619.0795625697647,
+              "p95": 2918.0909729749005,
+              "maximum": 2918.0909729749005,
+              "stddev": 136.025039728568
+            }
+          }
+        }
+      },
+      "Change": {
+        "trace_start": 33.748727,
+        "trace_end": 39.755677,
+        "complete_frames": 359,
+        "effective_frame_hz": 59.91492547885038,
+        "metrics": {
+          "replication_ms": {
+            "n": 359,
+            "mean": 8.516849860724143,
+            "p95": 12.980300000002387,
+            "maximum": 23.183099999997125,
+            "stddev": 2.45389389739194
+          },
+          "prioritize_process_ms": {
+            "n": 359,
+            "mean": 6.301290529248161,
+            "p95": 9.917999999998983,
+            "maximum": 14.4699000000017,
+            "stddev": 2.0500442603671982
+          },
+          "consider_ms": {
+            "n": 359,
+            "mean": 0.8744479108637199,
+            "p95": 1.0922999999962713,
+            "maximum": 4.694399999998211,
+            "stddev": 0.24084316390036978
+          },
+          "controller_ms": {
+            "n": 359,
+            "mean": 0.0129359331475701,
+            "p95": 0.01670000000331129,
+            "maximum": 0.35960000000301306,
+            "stddev": 0.0568978175166489
+          },
+          "mutation_ms": {
+            "n": 359,
+            "mean": 0.0016632311977326693,
+            "p95": 0.01079999999831216,
+            "maximum": 0.016900000005648508,
+            "stddev": 0.003936782089138152
+          },
+          "flush_ms": {
+            "n": 359,
+            "mean": 0.0,
+            "p95": 0.0,
+            "maximum": 0.0,
+            "stddev": 0.0
+          },
+          "wake_ms": {
+            "n": 359,
+            "mean": 0.0,
+            "p95": 0.0,
+            "maximum": 0.0,
+            "stddev": 0.0
+          },
+          "gt_active_ms": {
+            "n": 359,
+            "mean": 9.464422841225979,
+            "p95": 14.099800000003881,
+            "maximum": 26.073600000003694,
+            "stddev": 2.5750623654605316
+          },
+          "gt_frame_wall_ms": {
+            "n": 359,
+            "mean": 16.68989164345433,
+            "p95": 24.5959999999954,
+            "maximum": 30.34309999999607,
+            "stddev": 4.124704220015079
+          }
+        },
+        "engine_scope_totals_seconds": {
+          "World Tick Time": 3.316234,
+          "Tick Time": 0.105536,
+          "ServerReplicateActors Time": 3.064642,
+          "Consider Actors Time": 0.314692,
+          "Process Prioritized Actors Time": 2.267359,
+          "Replicate Actor Time": 1.975038,
+          "DormancySample": 1.857588
+        },
+        "connections": {
+          "256": {
+            "bytes": 439157,
+            "packets": 653,
+            "elapsed": 6.0066120000000005,
+            "bytes_per_second": 73112.26361882538,
+            "sample_rate_stats": {
+              "n": 13,
+              "mean": 73403.91422273632,
+              "p95": 80026.63530657848,
+              "maximum": 80026.63530657848,
+              "stddev": 3123.7265537240346
+            }
+          },
+          "257": {
+            "bytes": 439079,
+            "packets": 651,
+            "elapsed": 6.0066120000000005,
+            "bytes_per_second": 73099.2779290555,
+            "sample_rate_stats": {
+              "n": 13,
+              "mean": 73391.72762462439,
+              "p95": 80018.8472052397,
+              "maximum": 80018.8472052397,
+              "stddev": 3123.6564407068518
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "name": "frequent-0.1-0-r2",
+    "run_id": "734139FD42F794CE3F55EA8DAA0198C8",
+    "conditions": {
+      "engine": "5.8.3-58210709+++UE5+Release-5.8",
+      "run": "734139FD42F794CE3F55EA8DAA0198C8",
+      "scenario": "2",
+      "dormancy": "0",
+      "continuous": "0",
+      "actors": "4096",
+      "percent": "10",
+      "interval": "0.100",
+      "seed": "74219",
+      "connections": "2",
+      "netmode": "1",
+      "warm": "3.000",
+      "stable": "6.000",
+      "change": "6.000",
+      "relevancy": "AlwaysRelevant",
+      "netupdate": "30"
+    },
+    "final": "Final state matched | 2/2 clients | convergence upper bound 0.465s | SHA1 over sorted ID/version/value; intermediate versions may coalesce.\nDigest=5827932411935698CC1FB5A0C0F255AF6DD723E8\nSteps=60\nChanges=24600\nFlushes=0\nWakes=0\nConnectionChanged=0\n",
+    "phases": {
+      "Stable": {
+        "trace_start": 32.237772,
+        "trace_end": 38.263487,
+        "complete_frames": 360,
+        "effective_frame_hz": 59.92262890027442,
+        "metrics": {
+          "replication_ms": {
+            "n": 360,
+            "mean": 7.805093888889106,
+            "p95": 9.703000000001794,
+            "maximum": 22.635999999998546,
+            "stddev": 1.3361646555567317
+          },
+          "prioritize_process_ms": {
+            "n": 360,
+            "mean": 5.698192500000133,
+            "p95": 7.161599999989221,
+            "maximum": 15.755300000002137,
+            "stddev": 0.9996646477106272
+          },
+          "consider_ms": {
+            "n": 360,
+            "mean": 0.8913199999999301,
+            "p95": 1.050600000006341,
+            "maximum": 3.3226999999982354,
+            "stddev": 0.1645477585249788
+          },
+          "controller_ms": {
+            "n": 360,
+            "mean": 0.010923333333422313,
+            "p95": 0.0016000000044869012,
+            "maximum": 0.37890000000118107,
+            "stddev": 0.05532470583032853
+          },
+          "mutation_ms": {
+            "n": 360,
+            "mean": 0.0,
+            "p95": 0.0,
+            "maximum": 0.0,
+            "stddev": 0.0
+          },
+          "flush_ms": {
+            "n": 360,
+            "mean": 0.0,
+            "p95": 0.0,
+            "maximum": 0.0,
+            "stddev": 0.0
+          },
+          "wake_ms": {
+            "n": 360,
+            "mean": 0.0,
+            "p95": 0.0,
+            "maximum": 0.0,
+            "stddev": 0.0
+          },
+          "gt_active_ms": {
+            "n": 360,
+            "mean": 8.84859166666653,
+            "p95": 10.756200000002991,
+            "maximum": 25.79269999999667,
+            "stddev": 1.5067942791779525
+          },
+          "gt_frame_wall_ms": {
+            "n": 360,
+            "mean": 16.687765833333202,
+            "p95": 19.448799999999267,
+            "maximum": 34.12269999999751,
+            "stddev": 2.127657581167778
+          }
+        },
+        "engine_scope_totals_seconds": {
+          "World Tick Time": 3.094726,
+          "Tick Time": 0.112722,
+          "ServerReplicateActors Time": 2.818618,
+          "Consider Actors Time": 0.321823,
+          "Process Prioritized Actors Time": 2.05779,
+          "Replicate Actor Time": 1.785027,
+          "DormancySample": 1.663189
+        },
+        "connections": {
+          "256": {
+            "bytes": 15759,
+            "packets": 357,
+            "elapsed": 6.025286000000001,
+            "bytes_per_second": 2615.4775059640315,
+            "sample_rate_stats": {
+              "n": 13,
+              "mean": 2617.281154501167,
+              "p95": 2733.747071582052,
+              "maximum": 2733.747071582052,
+              "stddev": 66.71653707048318
+            }
+          },
+          "257": {
+            "bytes": 15727,
+            "packets": 357,
+            "elapsed": 6.025286000000001,
+            "bytes_per_second": 2610.1665547494335,
+            "sample_rate_stats": {
+              "n": 13,
+              "mean": 2612.392540520945,
+              "p95": 2733.747071582052,
+              "maximum": 2733.747071582052,
+              "stddev": 67.15539012045818
+            }
+          }
+        }
+      },
+      "Change": {
+        "trace_start": 38.263488,
+        "trace_end": 44.268712,
+        "complete_frames": 359,
+        "effective_frame_hz": 59.92201491931311,
+        "metrics": {
+          "replication_ms": {
+            "n": 359,
+            "mean": 8.948828133704705,
+            "p95": 13.701199999999858,
+            "maximum": 17.508800000001656,
+            "stddev": 2.3679040281431227
+          },
+          "prioritize_process_ms": {
+            "n": 359,
+            "mean": 6.6631863509750575,
+            "p95": 10.68029999999709,
+            "maximum": 13.995999999998787,
+            "stddev": 2.0817640339582315
+          },
+          "consider_ms": {
+            "n": 359,
+            "mean": 0.921076323119634,
+            "p95": 1.2431999999975574,
+            "maximum": 1.905999999998187,
+            "stddev": 0.16569947276860159
+          },
+          "controller_ms": {
+            "n": 359,
+            "mean": 0.012768802228395956,
+            "p95": 0.015099999998824387,
+            "maximum": 0.35959999999590764,
+            "stddev": 0.055241398394807795
+          },
+          "mutation_ms": {
+            "n": 359,
+            "mean": 0.0017810584957149136,
+            "p95": 0.01170000000172422,
+            "maximum": 0.029499999996573933,
+            "stddev": 0.004294445937925731
+          },
+          "flush_ms": {
+            "n": 359,
+            "mean": 0.0,
+            "p95": 0.0,
+            "maximum": 0.0,
+            "stddev": 0.0
+          },
+          "wake_ms": {
+            "n": 359,
+            "mean": 0.0,
+            "p95": 0.0,
+            "maximum": 0.0,
+            "stddev": 0.0
+          },
+          "gt_active_ms": {
+            "n": 359,
+            "mean": 9.885967130919006,
+            "p95": 14.718599999987703,
+            "maximum": 18.406100000007086,
+            "stddev": 2.4298505422991625
+          },
+          "gt_frame_wall_ms": {
+            "n": 359,
+            "mean": 16.687889972144585,
+            "p95": 24.69549999999998,
+            "maximum": 30.255000000003918,
+            "stddev": 3.9012667081202803
+          }
+        },
+        "engine_scope_totals_seconds": {
+          "World Tick Time": 3.473524,
+          "Tick Time": 0.105848,
+          "ServerReplicateActors Time": 3.218257,
+          "Consider Actors Time": 0.331576,
+          "Process Prioritized Actors Time": 2.395902,
+          "Replicate Actor Time": 2.085671,
+          "DormancySample": 1.957499
+        },
+        "connections": {
+          "256": {
+            "bytes": 439008,
+            "packets": 649,
+            "elapsed": 6.005409999999998,
+            "bytes_per_second": 73102.08628553257,
+            "sample_rate_stats": {
+              "n": 12,
+              "mean": 73660.1421121449,
+              "p95": 79927.74764097153,
+              "maximum": 79927.74764097153,
+              "stddev": 2775.7576105986286
+            }
+          },
+          "257": {
+            "bytes": 439155,
+            "packets": 652,
+            "elapsed": 6.005409999999998,
+            "bytes_per_second": 73126.56421459986,
+            "sample_rate_stats": {
+              "n": 12,
+              "mean": 73683.69431361159,
+              "p95": 79922.04950540149,
+              "maximum": 79922.04950540149,
+              "stddev": 2768.188724159196
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "name": "frequent-0.1-0-r3",
+    "run_id": "C8D6B3E54AF51A6A2C1A0286D9FCE4BF",
+    "conditions": {
+      "engine": "5.8.3-58210709+++UE5+Release-5.8",
+      "run": "C8D6B3E54AF51A6A2C1A0286D9FCE4BF",
+      "scenario": "2",
+      "dormancy": "0",
+      "continuous": "0",
+      "actors": "4096",
+      "percent": "10",
+      "interval": "0.100",
+      "seed": "74219",
+      "connections": "2",
+      "netmode": "1",
+      "warm": "3.000",
+      "stable": "6.000",
+      "change": "6.000",
+      "relevancy": "AlwaysRelevant",
+      "netupdate": "30"
+    },
+    "final": "Final state matched | 2/2 clients | convergence upper bound 0.466s | SHA1 over sorted ID/version/value; intermediate versions may coalesce.\nDigest=5827932411935698CC1FB5A0C0F255AF6DD723E8\nSteps=60\nChanges=24600\nFlushes=0\nWakes=0\nConnectionChanged=0\n",
+    "phases": {
+      "Stable": {
+        "trace_start": 31.824099,
+        "trace_end": 37.830976,
+        "complete_frames": 205,
+        "effective_frame_hz": 34.312924362999794,
+        "metrics": {
+          "replication_ms": {
+            "n": 205,
+            "mean": 10.498209756097488,
+            "p95": 13.925600000000316,
+            "maximum": 19.434100000005117,
+            "stddev": 2.1226807580949547
+          },
+          "prioritize_process_ms": {
+            "n": 205,
+            "mean": 7.938303414634133,
+            "p95": 10.828199999998844,
+            "maximum": 15.35530000000307,
+            "stddev": 1.6565899281471288
+          },
+          "consider_ms": {
+            "n": 205,
+            "mean": 1.034620975609548,
+            "p95": 1.457900000005452,
+            "maximum": 2.069499999997504,
+            "stddev": 0.2745328542057798
+          },
+          "controller_ms": {
+            "n": 205,
+            "mean": 0.01985073170725913,
+            "p95": 0.29089999999598604,
+            "maximum": 0.4181999999985919,
+            "stddev": 0.07668589589582803
+          },
+          "mutation_ms": {
+            "n": 205,
+            "mean": 0.0,
+            "p95": 0.0,
+            "maximum": 0.0,
+            "stddev": 0.0
+          },
+          "flush_ms": {
+            "n": 205,
+            "mean": 0.0,
+            "p95": 0.0,
+            "maximum": 0.0,
+            "stddev": 0.0
+          },
+          "wake_ms": {
+            "n": 205,
+            "mean": 0.0,
+            "p95": 0.0,
+            "maximum": 0.0,
+            "stddev": 0.0
+          },
+          "gt_active_ms": {
+            "n": 205,
+            "mean": 11.515991219512326,
+            "p95": 14.870300000012548,
+            "maximum": 20.908299999994995,
+            "stddev": 2.1971930279520775
+          },
+          "gt_frame_wall_ms": {
+            "n": 205,
+            "mean": 29.143134146341563,
+            "p95": 36.26679999999993,
+            "maximum": 49.06220000000161,
+            "stddev": 6.962904869455394
+          }
+        },
+        "engine_scope_totals_seconds": {
+          "World Tick Time": 2.330179,
+          "Tick Time": 0.064982,
+          "ServerReplicateActors Time": 2.16323,
+          "Consider Actors Time": 0.213425,
+          "Process Prioritized Actors Time": 1.635403,
+          "Replicate Actor Time": 1.416267,
+          "DormancySample": 1.31999
+        },
+        "connections": {
+          "256": {
+            "bytes": 9414,
+            "packets": 202,
+            "elapsed": 6.006958999999998,
+            "bytes_per_second": 1567.1823296946097,
+            "sample_rate_stats": {
+              "n": 13,
+              "mean": 1569.8458895715871,
+              "p95": 1652.08000902602,
+              "maximum": 1652.08000902602,
+              "stddev": 43.40167451966497
+            }
+          },
+          "257": {
+            "bytes": 9412,
+            "packets": 202,
+            "elapsed": 6.006958999999998,
+            "bytes_per_second": 1566.8493825245025,
+            "sample_rate_stats": {
+              "n": 13,
+              "mean": 1569.0430907883906,
+              "p95": 1644.0210821527223,
+              "maximum": 1644.0210821527223,
+              "stddev": 45.76587611605244
+            }
+          }
+        }
+      },
+      "Change": {
+        "trace_start": 37.830977,
+        "trace_end": 43.84059,
+        "complete_frames": 260,
+        "effective_frame_hz": 43.409318451327835,
+        "metrics": {
+          "replication_ms": {
+            "n": 260,
+            "mean": 9.022848846153709,
+            "p95": 14.885999999997068,
+            "maximum": 26.304000000003214,
+            "stddev": 3.5715319318888037
+          },
+          "prioritize_process_ms": {
+            "n": 260,
+            "mean": 5.172403846153464,
+            "p95": 11.13730000000146,
+            "maximum": 21.521700000000976,
+            "stddev": 3.737975039640366
+          },
+          "consider_ms": {
+            "n": 260,
+            "mean": 1.2276600000002593,
+            "p95": 1.9486999999998034,
+            "maximum": 4.275399999997376,
+            "stddev": 0.46087988688065373
+          },
+          "controller_ms": {
+            "n": 260,
+            "mean": 0.016846153846008002,
+            "p95": 0.025299999997230316,
+            "maximum": 0.3695000000050186,
+            "stddev": 0.06291543586503992
+          },
+          "mutation_ms": {
+            "n": 260,
+            "mean": 0.002813076923101877,
+            "p95": 0.015099999998824387,
+            "maximum": 0.025299999997230316,
+            "stddev": 0.005728865992066242
+          },
+          "flush_ms": {
+            "n": 260,
+            "mean": 0.0,
+            "p95": 0.0,
+            "maximum": 0.0,
+            "stddev": 0.0
+          },
+          "wake_ms": {
+            "n": 260,
+            "mean": 0.0,
+            "p95": 0.0,
+            "maximum": 0.0,
+            "stddev": 0.0
+          },
+          "gt_active_ms": {
+            "n": 260,
+            "mean": 10.22070615384663,
+            "p95": 16.16960000000489,
+            "maximum": 28.286000000001366,
+            "stddev": 3.77533985974353
+          },
+          "gt_frame_wall_ms": {
+            "n": 260,
+            "mean": 23.036025384615346,
+            "p95": 34.23540000000003,
+            "maximum": 47.57250000000113,
+            "stddev": 8.166598329813553
+          }
+        },
+        "engine_scope_totals_seconds": {
+          "World Tick Time": 2.583306,
+          "Tick Time": 0.089916,
+          "ServerReplicateActors Time": 2.356238,
+          "Consider Actors Time": 0.320282,
+          "Process Prioritized Actors Time": 1.352584,
+          "Replicate Actor Time": 1.187917,
+          "DormancySample": 1.123199
+        },
+        "connections": {
+          "256": {
+            "bytes": 384366,
+            "packets": 502,
+            "elapsed": 6.009360999999998,
+            "bytes_per_second": 63961.20985242858,
+            "sample_rate_stats": {
+              "n": 12,
+              "mean": 63914.59039847063,
+              "p95": 85761.32565522415,
+              "maximum": 85761.32565522415,
+              "stddev": 11157.28960518675
+            }
+          },
+          "257": {
+            "bytes": 384824,
+            "packets": 502,
+            "elapsed": 6.009360999999998,
+            "bytes_per_second": 64037.42427855476,
+            "sample_rate_stats": {
+              "n": 12,
+              "mean": 63988.15890810264,
+              "p95": 86635.97455705387,
+              "maximum": 86635.97455705387,
+              "stddev": 11312.744619966332
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "name": "frequent-0.1-1-r1",
+    "run_id": "43A12E11411D6C39EA032295791EA3D3",
+    "conditions": {
+      "engine": "5.8.3-58210709+++UE5+Release-5.8",
+      "run": "43A12E11411D6C39EA032295791EA3D3",
+      "scenario": "2",
+      "dormancy": "1",
+      "continuous": "0",
+      "actors": "4096",
+      "percent": "10",
+      "interval": "0.100",
+      "seed": "74219",
+      "connections": "2",
+      "netmode": "1",
+      "warm": "3.000",
+      "stable": "6.000",
+      "change": "6.000",
+      "relevancy": "AlwaysRelevant",
+      "netupdate": "30"
+    },
+    "final": "Final state matched | 2/2 clients | convergence upper bound 1.444s | SHA1 over sorted ID/version/value; intermediate versions may coalesce.\nDigest=5827932411935698CC1FB5A0C0F255AF6DD723E8\nSteps=60\nChanges=24600\nFlushes=24600\nWakes=0\nConnectionChanged=0\n",
+    "phases": {
+      "Stable": {
+        "trace_start": 29.942345,
+        "trace_end": 35.944262,
+        "complete_frames": 363,
+        "effective_frame_hz": 60.659067283120955,
+        "metrics": {
+          "replication_ms": {
+            "n": 363,
+            "mean": 0.07432203856752133,
+            "p95": 0.11010000000055697,
+            "maximum": 0.41539999999784527,
+            "stddev": 0.0329790844350992
+          },
+          "prioritize_process_ms": {
+            "n": 363,
+            "mean": 0.0424410468318479,
+            "p95": 0.07510000000365835,
+            "maximum": 0.38849999999968077,
+            "stddev": 0.025021227363662742
+          },
+          "consider_ms": {
+            "n": 363,
+            "mean": 0.011986225895159582,
+            "p95": 0.015099999998824387,
+            "maximum": 0.3108000000011657,
+            "stddev": 0.015969420980028456
+          },
+          "controller_ms": {
+            "n": 363,
+            "mean": 0.009782644628253706,
+            "p95": 0.0014999999997655777,
+            "maximum": 0.3530999999981077,
+            "stddev": 0.051495787540519505
+          },
+          "mutation_ms": {
+            "n": 363,
+            "mean": 0.0,
+            "p95": 0.0,
+            "maximum": 0.0,
+            "stddev": 0.0
+          },
+          "flush_ms": {
+            "n": 363,
+            "mean": 0.0,
+            "p95": 0.0,
+            "maximum": 0.0,
+            "stddev": 0.0
+          },
+          "wake_ms": {
+            "n": 363,
+            "mean": 0.0,
+            "p95": 0.0,
+            "maximum": 0.0,
+            "stddev": 0.0
+          },
+          "gt_active_ms": {
+            "n": 363,
+            "mean": 0.9566950413225233,
+            "p95": 1.2652999999929193,
+            "maximum": 1.6919000000044093,
+            "stddev": 0.17145176561087297
+          },
+          "gt_frame_wall_ms": {
+            "n": 363,
+            "mean": 16.48519283746559,
+            "p95": 17.150799999996025,
+            "maximum": 17.725199999997443,
+            "stddev": 0.3862716569815299
+          }
+        },
+        "engine_scope_totals_seconds": {
+          "World Tick Time": 0.271462,
+          "Tick Time": 0.101162,
+          "ServerReplicateActors Time": 0.027082,
+          "Consider Actors Time": 0.004361,
+          "Process Prioritized Actors Time": 0.01548,
+          "Replicate Actor Time": 0.01401
+        },
+        "connections": {
+          "256": {
+            "bytes": 15862,
+            "packets": 360,
+            "elapsed": 6.001965000000002,
+            "bytes_per_second": 2642.8011492902733,
+            "sample_rate_stats": {
+              "n": 12,
+              "mean": 2641.4629855443814,
+              "p95": 2726.052844725807,
+              "maximum": 2726.052844725807,
+              "stddev": 47.358911627607746
+            }
+          },
+          "257": {
+            "bytes": 15443,
+            "packets": 350,
+            "elapsed": 6.001965000000002,
+            "bytes_per_second": 2572.990678885997,
+            "sample_rate_stats": {
+              "n": 12,
+              "mean": 2576.6884200560144,
+              "p95": 2724.0380237023587,
+              "maximum": 2724.0380237023587,
+              "stddev": 123.98619780791047
+            }
+          }
+        }
+      },
+      "Change": {
+        "trace_start": 35.944263,
+        "trace_end": 41.962128,
+        "complete_frames": 359,
+        "effective_frame_hz": 59.75666752079305,
+        "metrics": {
+          "replication_ms": {
+            "n": 359,
+            "mean": 6.5426660167129675,
+            "p95": 8.890600000000859,
+            "maximum": 13.28680000000304,
+            "stddev": 1.8121177850634673
+          },
+          "prioritize_process_ms": {
+            "n": 359,
+            "mean": 1.1561206128136015,
+            "p95": 1.489100000000576,
+            "maximum": 2.197400000000016,
+            "stddev": 0.19451408436198692
+          },
+          "consider_ms": {
+            "n": 359,
+            "mean": 1.7937779944289365,
+            "p95": 2.5106000000008066,
+            "maximum": 5.055099999999868,
+            "stddev": 0.5510777311262078
+          },
+          "controller_ms": {
+            "n": 359,
+            "mean": 0.18822869080764565,
+            "p95": 1.2641000000002123,
+            "maximum": 2.812299999995105,
+            "stddev": 0.45748886659361465
+          },
+          "mutation_ms": {
+            "n": 359,
+            "mean": 0.17730668523665938,
+            "p95": 1.262999999994463,
+            "maximum": 2.810799999998892,
+            "stddev": 0.45390562244710825
+          },
+          "flush_ms": {
+            "n": 359,
+            "mean": 0.1702805013939442,
+            "p95": 1.2246999999305785,
+            "maximum": 2.7488000000133184,
+            "stddev": 0.4388192014677133
+          },
+          "wake_ms": {
+            "n": 359,
+            "mean": 0.0,
+            "p95": 0.0,
+            "maximum": 0.0,
+            "stddev": 0.0
+          },
+          "gt_active_ms": {
+            "n": 359,
+            "mean": 8.834537047353717,
+            "p95": 12.386300000002848,
+            "maximum": 16.596100000008107,
+            "stddev": 2.3836265253357194
+          },
+          "gt_frame_wall_ms": {
+            "n": 359,
+            "mean": 16.734098885793998,
+            "p95": 19.36340000000314,
+            "maximum": 21.09140000000309,
+            "stddev": 1.5835869486948395
+          }
+        },
+        "engine_scope_totals_seconds": {
+          "World Tick Time": 3.086765,
+          "Tick Time": 0.104708,
+          "ServerReplicateActors Time": 2.348924,
+          "Consider Actors Time": 0.643977,
+          "Process Prioritized Actors Time": 0.415121,
+          "Replicate Actor Time": 0.282592,
+          "DormancySample": 0.275458
+        },
+        "connections": {
+          "256": {
+            "bytes": 594554,
+            "packets": 721,
+            "elapsed": 6.0170400000000015,
+            "bytes_per_second": 98811.70808237935,
+            "sample_rate_stats": {
+              "n": 13,
+              "mean": 98885.85257668316,
+              "p95": 99637.10350901038,
+              "maximum": 99637.10350901038,
+              "stddev": 516.9520227527117
+            }
+          },
+          "257": {
+            "bytes": 594572,
+            "packets": 721,
+            "elapsed": 6.0170400000000015,
+            "bytes_per_second": 98814.69958650763,
+            "sample_rate_stats": {
+              "n": 13,
+              "mean": 98892.00357505314,
+              "p95": 99723.14591273147,
+              "maximum": 99723.14591273147,
+              "stddev": 531.4413282640779
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "name": "frequent-0.1-1-r2",
+    "run_id": "650629DD4D015B22F3543FA06537E792",
+    "conditions": {
+      "engine": "5.8.3-58210709+++UE5+Release-5.8",
+      "run": "650629DD4D015B22F3543FA06537E792",
+      "scenario": "2",
+      "dormancy": "1",
+      "continuous": "0",
+      "actors": "4096",
+      "percent": "10",
+      "interval": "0.100",
+      "seed": "74219",
+      "connections": "2",
+      "netmode": "1",
+      "warm": "3.000",
+      "stable": "6.000",
+      "change": "6.000",
+      "relevancy": "AlwaysRelevant",
+      "netupdate": "30"
+    },
+    "final": "Final state matched | 2/2 clients | convergence upper bound 1.451s | SHA1 over sorted ID/version/value; intermediate versions may coalesce.\nDigest=5827932411935698CC1FB5A0C0F255AF6DD723E8\nSteps=60\nChanges=24600\nFlushes=24600\nWakes=0\nConnectionChanged=0\n",
+    "phases": {
+      "Stable": {
+        "trace_start": 28.293659,
+        "trace_end": 34.321652,
+        "complete_frames": 363,
+        "effective_frame_hz": 60.39718989012938,
+        "metrics": {
+          "replication_ms": {
+            "n": 363,
+            "mean": 0.07269118457308683,
+            "p95": 0.11080000000163182,
+            "maximum": 0.16549999999426745,
+            "stddev": 0.02259314616346579
+          },
+          "prioritize_process_ms": {
+            "n": 363,
+            "mean": 0.04075702479359578,
+            "p95": 0.07100000000193063,
+            "maximum": 0.0992999999986921,
+            "stddev": 0.01489202478388104
+          },
+          "consider_ms": {
+            "n": 363,
+            "mean": 0.011866115702347413,
+            "p95": 0.01639999999980546,
+            "maximum": 0.025499999999567535,
+            "stddev": 0.00313618747646984
+          },
+          "controller_ms": {
+            "n": 363,
+            "mean": 0.010140220385809468,
+            "p95": 0.0016000000009341875,
+            "maximum": 0.36310000000128184,
+            "stddev": 0.05371643659225726
+          },
+          "mutation_ms": {
+            "n": 363,
+            "mean": 0.0,
+            "p95": 0.0,
+            "maximum": 0.0,
+            "stddev": 0.0
+          },
+          "flush_ms": {
+            "n": 363,
+            "mean": 0.0,
+            "p95": 0.0,
+            "maximum": 0.0,
+            "stddev": 0.0
+          },
+          "wake_ms": {
+            "n": 363,
+            "mean": 0.0,
+            "p95": 0.0,
+            "maximum": 0.0,
+            "stddev": 0.0
+          },
+          "gt_active_ms": {
+            "n": 363,
+            "mean": 0.9929661157026769,
+            "p95": 1.3958999999950095,
+            "maximum": 1.9376000000050908,
+            "stddev": 0.21972165700237037
+          },
+          "gt_frame_wall_ms": {
+            "n": 363,
+            "mean": 16.556643801652974,
+            "p95": 17.27719999999877,
+            "maximum": 18.068299999999482,
+            "stddev": 0.429221703178529
+          }
+        },
+        "engine_scope_totals_seconds": {
+          "World Tick Time": 0.28012,
+          "Tick Time": 0.104578,
+          "ServerReplicateActors Time": 0.026544,
+          "Consider Actors Time": 0.004327,
+          "Process Prioritized Actors Time": 0.014907,
+          "Replicate Actor Time": 0.01344
+        },
+        "connections": {
+          "256": {
+            "bytes": 15643,
+            "packets": 355,
+            "elapsed": 6.028268000000001,
+            "bytes_per_second": 2594.9410344729195,
+            "sample_rate_stats": {
+              "n": 12,
+              "mean": 2596.333034298582,
+              "p95": 2683.4717107084803,
+              "maximum": 2683.4717107084803,
+              "stddev": 99.56888175346278
+            }
+          },
+          "257": {
+            "bytes": 15887,
+            "packets": 361,
+            "elapsed": 6.028268000000001,
+            "bytes_per_second": 2635.4170053487996,
+            "sample_rate_stats": {
+              "n": 12,
+              "mean": 2636.0618356569894,
+              "p95": 2685.091322290732,
+              "maximum": 2685.091322290732,
+              "stddev": 48.34413962100478
+            }
+          }
+        }
+      },
+      "Change": {
+        "trace_start": 34.321652,
+        "trace_end": 40.346517,
+        "complete_frames": 360,
+        "effective_frame_hz": 59.844401563714236,
+        "metrics": {
+          "replication_ms": {
+            "n": 360,
+            "mean": 6.634048333333473,
+            "p95": 8.938300000004062,
+            "maximum": 15.890300000002355,
+            "stddev": 1.758930863654655
+          },
+          "prioritize_process_ms": {
+            "n": 360,
+            "mean": 1.1680019444439873,
+            "p95": 1.4868000000021198,
+            "maximum": 3.6413999999993507,
+            "stddev": 0.2400991533146896
+          },
+          "consider_ms": {
+            "n": 360,
+            "mean": 1.8029944444443342,
+            "p95": 2.398399999997025,
+            "maximum": 5.938199999995675,
+            "stddev": 0.5032713858586045
+          },
+          "controller_ms": {
+            "n": 360,
+            "mean": 0.19876833333331628,
+            "p95": 1.2940000000014606,
+            "maximum": 3.3981999999994628,
+            "stddev": 0.5048684348297074
+          },
+          "mutation_ms": {
+            "n": 360,
+            "mean": 0.18802805555541763,
+            "p95": 1.2881999999976301,
+            "maximum": 3.3938999999989505,
+            "stddev": 0.49660563574692
+          },
+          "flush_ms": {
+            "n": 360,
+            "mean": 0.18065833333302805,
+            "p95": 1.2440000000921714,
+            "maximum": 3.2446999999962145,
+            "stddev": 0.4800136388350372
+          },
+          "wake_ms": {
+            "n": 360,
+            "mean": 0.0,
+            "p95": 0.0,
+            "maximum": 0.0,
+            "stddev": 0.0
+          },
+          "gt_active_ms": {
+            "n": 360,
+            "mean": 8.959708611111003,
+            "p95": 12.475499999993644,
+            "maximum": 24.250699999988967,
+            "stddev": 2.3546562770898456
+          },
+          "gt_frame_wall_ms": {
+            "n": 360,
+            "mean": 16.709531666666578,
+            "p95": 20.14109999999647,
+            "maximum": 26.847699999997587,
+            "stddev": 2.0394030971034542
+          }
+        },
+        "engine_scope_totals_seconds": {
+          "World Tick Time": 3.135453,
+          "Tick Time": 0.105502,
+          "ServerReplicateActors Time": 2.388375,
+          "Consider Actors Time": 0.649092,
+          "Process Prioritized Actors Time": 0.42055,
+          "Replicate Actor Time": 0.286387,
+          "DormancySample": 0.279275
+        },
+        "connections": {
+          "256": {
+            "bytes": 595340,
+            "packets": 723,
+            "elapsed": 6.024259999999998,
+            "bytes_per_second": 98823.75594678851,
+            "sample_rate_stats": {
+              "n": 13,
+              "mean": 98835.94122021801,
+              "p95": 99794.44964016251,
+              "maximum": 99794.44964016251,
+              "stddev": 569.126462986741
+            }
+          },
+          "257": {
+            "bytes": 595571,
+            "packets": 723,
+            "elapsed": 6.024259999999998,
+            "bytes_per_second": 98862.10090533944,
+            "sample_rate_stats": {
+              "n": 13,
+              "mean": 98954.09022810534,
+              "p95": 99854.46434376489,
+              "maximum": 99854.46434376489,
+              "stddev": 620.9320071753258
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "name": "frequent-0.1-1-r3",
+    "run_id": "B079ED654B2E8233619D058EF42671C1",
+    "conditions": {
+      "engine": "5.8.3-58210709+++UE5+Release-5.8",
+      "run": "B079ED654B2E8233619D058EF42671C1",
+      "scenario": "2",
+      "dormancy": "1",
+      "continuous": "0",
+      "actors": "4096",
+      "percent": "10",
+      "interval": "0.100",
+      "seed": "74219",
+      "connections": "2",
+      "netmode": "1",
+      "warm": "3.000",
+      "stable": "6.000",
+      "change": "6.000",
+      "relevancy": "AlwaysRelevant",
+      "netupdate": "30"
+    },
+    "final": "Final state matched | 2/2 clients | convergence upper bound 2.270s | SHA1 over sorted ID/version/value; intermediate versions may coalesce.\nDigest=5827932411935698CC1FB5A0C0F255AF6DD723E8\nSteps=60\nChanges=24600\nFlushes=24600\nWakes=0\nConnectionChanged=0\n",
+    "phases": {
+      "Stable": {
+        "trace_start": 28.465414,
+        "trace_end": 34.480378,
+        "complete_frames": 361,
+        "effective_frame_hz": 60.18742932353562,
+        "metrics": {
+          "replication_ms": {
+            "n": 361,
+            "mean": 0.07963185595569934,
+            "p95": 0.12479999999825964,
+            "maximum": 0.3734000000008564,
+            "stddev": 0.0328185247341066
+          },
+          "prioritize_process_ms": {
+            "n": 361,
+            "mean": 0.04526094182809,
+            "p95": 0.08230000000253312,
+            "maximum": 0.2039000000024771,
+            "stddev": 0.021197903413043912
+          },
+          "consider_ms": {
+            "n": 361,
+            "mean": 0.012645429362869621,
+            "p95": 0.01669999999620586,
+            "maximum": 0.0686999999999216,
+            "stddev": 0.004617940545857461
+          },
+          "controller_ms": {
+            "n": 361,
+            "mean": 0.010664542936156662,
+            "p95": 0.0015000000033182914,
+            "maximum": 0.34580000000161704,
+            "stddev": 0.05383701860846548
+          },
+          "mutation_ms": {
+            "n": 361,
+            "mean": 0.0,
+            "p95": 0.0,
+            "maximum": 0.0,
+            "stddev": 0.0
+          },
+          "flush_ms": {
+            "n": 361,
+            "mean": 0.0,
+            "p95": 0.0,
+            "maximum": 0.0,
+            "stddev": 0.0
+          },
+          "wake_ms": {
+            "n": 361,
+            "mean": 0.0,
+            "p95": 0.0,
+            "maximum": 0.0,
+            "stddev": 0.0
+          },
+          "gt_active_ms": {
+            "n": 361,
+            "mean": 1.106215512465336,
+            "p95": 1.5305000000012114,
+            "maximum": 4.909100000006106,
+            "stddev": 0.36696218702100636
+          },
+          "gt_frame_wall_ms": {
+            "n": 361,
+            "mean": 16.61431911357347,
+            "p95": 17.292900000001055,
+            "maximum": 20.370300000003283,
+            "stddev": 0.4984205394100003
+          }
+        },
+        "engine_scope_totals_seconds": {
+          "World Tick Time": 0.310013,
+          "Tick Time": 0.114345,
+          "ServerReplicateActors Time": 0.028832,
+          "Consider Actors Time": 0.004577,
+          "Process Prioritized Actors Time": 0.016396,
+          "Replicate Actor Time": 0.014781
+        },
+        "connections": {
+          "256": {
+            "bytes": 15889,
+            "packets": 361,
+            "elapsed": 6.014893999999998,
+            "bytes_per_second": 2641.609311818297,
+            "sample_rate_stats": {
+              "n": 13,
+              "mean": 2642.893193873461,
+              "p95": 2708.1147214216257,
+              "maximum": 2708.1147214216257,
+              "stddev": 32.790295397534244
+            }
+          },
+          "257": {
+            "bytes": 15916,
+            "packets": 361,
+            "elapsed": 6.014893999999998,
+            "bytes_per_second": 2646.09816897854,
+            "sample_rate_stats": {
+              "n": 13,
+              "mean": 2646.692307751722,
+              "p95": 2708.1147214216257,
+              "maximum": 2708.1147214216257,
+              "stddev": 30.369591657150472
+            }
+          }
+        }
+      },
+      "Change": {
+        "trace_start": 34.480379,
+        "trace_end": 40.488914,
+        "complete_frames": 358,
+        "effective_frame_hz": 59.67714497870589,
+        "metrics": {
+          "replication_ms": {
+            "n": 358,
+            "mean": 7.983077094972355,
+            "p95": 10.885899999998117,
+            "maximum": 27.861399999999037,
+            "stddev": 2.55296222069858
+          },
+          "prioritize_process_ms": {
+            "n": 358,
+            "mean": 1.4678715083797067,
+            "p95": 1.9939999999962765,
+            "maximum": 4.413499999998294,
+            "stddev": 0.3803680104681414
+          },
+          "consider_ms": {
+            "n": 358,
+            "mean": 2.164565083798741,
+            "p95": 2.891299999994601,
+            "maximum": 10.628300000000479,
+            "stddev": 0.7374259934638664
+          },
+          "controller_ms": {
+            "n": 358,
+            "mean": 0.2259608938549887,
+            "p95": 1.4777000000023577,
+            "maximum": 2.8812999999985323,
+            "stddev": 0.5380033452785582
+          },
+          "mutation_ms": {
+            "n": 358,
+            "mean": 0.20684189944128073,
+            "p95": 1.4764000000013766,
+            "maximum": 2.88009999999872,
+            "stddev": 0.5255116945915604
+          },
+          "flush_ms": {
+            "n": 358,
+            "mean": 0.19848016759803627,
+            "p95": 1.4219000000110782,
+            "maximum": 2.821399999966445,
+            "stddev": 0.5081802843744389
+          },
+          "wake_ms": {
+            "n": 358,
+            "mean": 0.0,
+            "p95": 0.0,
+            "maximum": 0.0,
+            "stddev": 0.0
+          },
+          "gt_active_ms": {
+            "n": 358,
+            "mean": 10.730423743016955,
+            "p95": 14.857900000002644,
+            "maximum": 32.5571999999994,
+            "stddev": 3.2230839123104187
+          },
+          "gt_frame_wall_ms": {
+            "n": 358,
+            "mean": 16.7562245810056,
+            "p95": 20.00009999999719,
+            "maximum": 38.69739999999666,
+            "stddev": 2.296913715127963
+          }
+        },
+        "engine_scope_totals_seconds": {
+          "World Tick Time": 3.741199,
+          "Tick Time": 0.118774,
+          "ServerReplicateActors Time": 2.858053,
+          "Consider Actors Time": 0.774929,
+          "Process Prioritized Actors Time": 0.525576,
+          "Replicate Actor Time": 0.3591,
+          "DormancySample": 0.3498
+        },
+        "connections": {
+          "256": {
+            "bytes": 590525,
+            "packets": 718,
+            "elapsed": 6.007773,
+            "bytes_per_second": 98293.49411171161,
+            "sample_rate_stats": {
+              "n": 12,
+              "mean": 98226.95752023862,
+              "p95": 99418.96253410519,
+              "maximum": 99418.96253410519,
+              "stddev": 1586.5437910407468
+            }
+          },
+          "257": {
+            "bytes": 590492,
+            "packets": 718,
+            "elapsed": 6.007773,
+            "bytes_per_second": 98288.00122774279,
+            "sample_rate_stats": {
+              "n": 12,
+              "mean": 98223.06936816836,
+              "p95": 99421.0421241764,
+              "maximum": 99421.0421241764,
+              "stddev": 1598.9619235396285
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "name": "rare-0-r1",
+    "run_id": "04A2FA2049C249DD181BE985F759F4A6",
+    "conditions": {
+      "engine": "5.8.3-58210709+++UE5+Release-5.8",
+      "run": "04A2FA2049C249DD181BE985F759F4A6",
+      "scenario": "0",
+      "dormancy": "0",
+      "continuous": "0",
+      "actors": "4096",
+      "percent": "1",
+      "interval": "1.000",
+      "seed": "74219",
+      "connections": "2",
+      "netmode": "1",
+      "warm": "3.000",
+      "stable": "6.000",
+      "change": "6.000",
+      "relevancy": "AlwaysRelevant",
+      "netupdate": "30"
+    },
+    "final": "Final state matched | 2/2 clients | convergence upper bound 0.463s | SHA1 over sorted ID/version/value; intermediate versions may coalesce.\nDigest=B84E2334AF6DF34FA0449FA488F79CE92A66B2B1\nSteps=6\nChanges=246\nFlushes=0\nWakes=0\nConnectionChanged=0\n",
+    "phases": {
+      "Stable": {
+        "trace_start": 32.236578,
+        "trace_end": 38.270408,
+        "complete_frames": 321,
+        "effective_frame_hz": 53.38428955239519,
+        "metrics": {
+          "replication_ms": {
+            "n": 321,
+            "mean": 9.03388037383167,
+            "p95": 13.128299999998205,
+            "maximum": 28.112799999995275,
+            "stddev": 2.391274762330328
+          },
+          "prioritize_process_ms": {
+            "n": 321,
+            "mean": 6.630043302180733,
+            "p95": 9.896500000003527,
+            "maximum": 19.514499999999657,
+            "stddev": 1.8374243595384272
+          },
+          "consider_ms": {
+            "n": 321,
+            "mean": 0.9889545171341194,
+            "p95": 1.3872999999975377,
+            "maximum": 3.9744999999982156,
+            "stddev": 0.2815968660821704
+          },
+          "controller_ms": {
+            "n": 321,
+            "mean": 0.01320311526463036,
+            "p95": 0.0016999999985500835,
+            "maximum": 0.5555999999984351,
+            "stddev": 0.06479222409156479
+          },
+          "mutation_ms": {
+            "n": 321,
+            "mean": 0.0,
+            "p95": 0.0,
+            "maximum": 0.0,
+            "stddev": 0.0
+          },
+          "flush_ms": {
+            "n": 321,
+            "mean": 0.0,
+            "p95": 0.0,
+            "maximum": 0.0,
+            "stddev": 0.0
+          },
+          "wake_ms": {
+            "n": 321,
+            "mean": 0.0,
+            "p95": 0.0,
+            "maximum": 0.0,
+            "stddev": 0.0
+          },
+          "gt_active_ms": {
+            "n": 321,
+            "mean": 10.167987850467856,
+            "p95": 14.410900000001448,
+            "maximum": 32.35120000000791,
+            "stddev": 2.577009836918191
+          },
+          "gt_frame_wall_ms": {
+            "n": 321,
+            "mean": 18.731626479750943,
+            "p95": 32.812400000004516,
+            "maximum": 41.0168000000013,
+            "stddev": 5.982197770788677
+          }
+        },
+        "engine_scope_totals_seconds": {
+          "World Tick Time": 3.183953,
+          "Tick Time": 0.107472,
+          "ServerReplicateActors Time": 2.91134,
+          "Consider Actors Time": 0.318461,
+          "Process Prioritized Actors Time": 2.136988,
+          "Replicate Actor Time": 1.847267,
+          "DormancySample": 1.727681
+        },
+        "connections": {
+          "256": {
+            "bytes": 14207,
+            "packets": 319,
+            "elapsed": 6.034092999999999,
+            "bytes_per_second": 2354.4549280231518,
+            "sample_rate_stats": {
+              "n": 13,
+              "mean": 2313.30284203584,
+              "p95": 2662.6123077460134,
+              "maximum": 2662.6123077460134,
+              "stddev": 497.1412294249108
+            }
+          },
+          "257": {
+            "bytes": 14227,
+            "packets": 319,
+            "elapsed": 6.034092999999999,
+            "bytes_per_second": 2357.769427816244,
+            "sample_rate_stats": {
+              "n": 13,
+              "mean": 2317.414689577764,
+              "p95": 2680.0657023342974,
+              "maximum": 2680.0657023342974,
+              "stddev": 488.23955315927356
+            }
+          }
+        }
+      },
+      "Change": {
+        "trace_start": 38.270409,
+        "trace_end": 44.278708,
+        "complete_frames": 358,
+        "effective_frame_hz": 59.76763112980713,
+        "metrics": {
+          "replication_ms": {
+            "n": 358,
+            "mean": 8.2375041899441,
+            "p95": 10.40880000000044,
+            "maximum": 25.207699999995725,
+            "stddev": 1.7906178234939547
+          },
+          "prioritize_process_ms": {
+            "n": 358,
+            "mean": 6.041908100558731,
+            "p95": 7.724299999992468,
+            "maximum": 16.014499999997156,
+            "stddev": 1.2855664123779609
+          },
+          "consider_ms": {
+            "n": 358,
+            "mean": 0.8860399441341524,
+            "p95": 1.1030999999945834,
+            "maximum": 5.07209999999958,
+            "stddev": 0.27237703713926187
+          },
+          "controller_ms": {
+            "n": 358,
+            "mean": 0.010966201117453753,
+            "p95": 0.0031999999947629476,
+            "maximum": 0.41250000000303544,
+            "stddev": 0.05515575605370077
+          },
+          "mutation_ms": {
+            "n": 358,
+            "mean": 3.603351955736503e-05,
+            "p95": 0.0,
+            "maximum": 0.0028000000042993634,
+            "stddev": 0.000281378995255257
+          },
+          "flush_ms": {
+            "n": 358,
+            "mean": 0.0,
+            "p95": 0.0,
+            "maximum": 0.0,
+            "stddev": 0.0
+          },
+          "wake_ms": {
+            "n": 358,
+            "mean": 0.0,
+            "p95": 0.0,
+            "maximum": 0.0,
+            "stddev": 0.0
+          },
+          "gt_active_ms": {
+            "n": 358,
+            "mean": 9.263528212290456,
+            "p95": 11.81139999999914,
+            "maximum": 29.31960000000089,
+            "stddev": 1.9607717567972973
+          },
+          "gt_frame_wall_ms": {
+            "n": 358,
+            "mean": 16.731021508379833,
+            "p95": 20.546700000004137,
+            "maximum": 32.50380000000064,
+            "stddev": 2.5150991892521817
+          }
+        },
+        "engine_scope_totals_seconds": {
+          "World Tick Time": 3.238739,
+          "Tick Time": 0.117596,
+          "ServerReplicateActors Time": 2.957002,
+          "Consider Actors Time": 0.318141,
+          "Process Prioritized Actors Time": 2.168738,
+          "Replicate Actor Time": 1.878147,
+          "DormancySample": 1.758659
+        },
+        "connections": {
+          "256": {
+            "bytes": 20072,
+            "packets": 359,
+            "elapsed": 6.007894999999998,
+            "bytes_per_second": 3340.937216778923,
+            "sample_rate_stats": {
+              "n": 13,
+              "mean": 3412.775123740216,
+              "p95": 5895.785758770956,
+              "maximum": 5895.785758770956,
+              "stddev": 990.1005885190073
+            }
+          },
+          "257": {
+            "bytes": 20060,
+            "packets": 359,
+            "elapsed": 6.007894999999998,
+            "bytes_per_second": 3338.9398449873056,
+            "sample_rate_stats": {
+              "n": 13,
+              "mean": 3410.9620362564756,
+              "p95": 5895.785758770956,
+              "maximum": 5895.785758770956,
+              "stddev": 995.4734924266777
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "name": "rare-0-r2",
+    "run_id": "1C99FC7C40CC65538DA414BBA906E5EB",
+    "conditions": {
+      "engine": "5.8.3-58210709+++UE5+Release-5.8",
+      "run": "1C99FC7C40CC65538DA414BBA906E5EB",
+      "scenario": "0",
+      "dormancy": "0",
+      "continuous": "0",
+      "actors": "4096",
+      "percent": "1",
+      "interval": "1.000",
+      "seed": "74219",
+      "connections": "2",
+      "netmode": "1",
+      "warm": "3.000",
+      "stable": "6.000",
+      "change": "6.000",
+      "relevancy": "AlwaysRelevant",
+      "netupdate": "30"
+    },
+    "final": "Final state matched | 2/2 clients | convergence upper bound 0.447s | SHA1 over sorted ID/version/value; intermediate versions may coalesce.\nDigest=B84E2334AF6DF34FA0449FA488F79CE92A66B2B1\nSteps=6\nChanges=246\nFlushes=0\nWakes=0\nConnectionChanged=0\n",
+    "phases": {
+      "Stable": {
+        "trace_start": 28.977096,
+        "trace_end": 34.999378,
+        "complete_frames": 360,
+        "effective_frame_hz": 59.99905901475777,
+        "metrics": {
+          "replication_ms": {
+            "n": 360,
+            "mean": 8.169447777777755,
+            "p95": 9.88259999999741,
+            "maximum": 16.311200000000525,
+            "stddev": 1.0085591060581125
+          },
+          "prioritize_process_ms": {
+            "n": 360,
+            "mean": 5.963164444444481,
+            "p95": 7.1504999999945085,
+            "maximum": 13.107799999996672,
+            "stddev": 0.762122849536023
+          },
+          "consider_ms": {
+            "n": 360,
+            "mean": 0.9256347222223127,
+            "p95": 1.1100000000006105,
+            "maximum": 2.3914000000004876,
+            "stddev": 0.1352255350774231
+          },
+          "controller_ms": {
+            "n": 360,
+            "mean": 0.009657500000207856,
+            "p95": 0.0015000000033182914,
+            "maximum": 0.31570000000158416,
+            "stddev": 0.050374333556013055
+          },
+          "mutation_ms": {
+            "n": 360,
+            "mean": 0.0,
+            "p95": 0.0,
+            "maximum": 0.0,
+            "stddev": 0.0
+          },
+          "flush_ms": {
+            "n": 360,
+            "mean": 0.0,
+            "p95": 0.0,
+            "maximum": 0.0,
+            "stddev": 0.0
+          },
+          "wake_ms": {
+            "n": 360,
+            "mean": 0.0,
+            "p95": 0.0,
+            "maximum": 0.0,
+            "stddev": 0.0
+          },
+          "gt_active_ms": {
+            "n": 360,
+            "mean": 9.180623055555534,
+            "p95": 11.20989999999722,
+            "maximum": 17.984200000000783,
+            "stddev": 1.1541806780813608
+          },
+          "gt_frame_wall_ms": {
+            "n": 360,
+            "mean": 16.6665133333334,
+            "p95": 19.025899999995488,
+            "maximum": 24.11570000000296,
+            "stddev": 1.3687866791118117
+          }
+        },
+        "engine_scope_totals_seconds": {
+          "World Tick Time": 3.227934,
+          "Tick Time": 0.111602,
+          "ServerReplicateActors Time": 2.952752,
+          "Consider Actors Time": 0.334354,
+          "Process Prioritized Actors Time": 2.155721,
+          "Replicate Actor Time": 1.86676,
+          "DormancySample": 1.748632
+        },
+        "connections": {
+          "256": {
+            "bytes": 15919,
+            "packets": 361,
+            "elapsed": 6.022342999999999,
+            "bytes_per_second": 2643.3233709870065,
+            "sample_rate_stats": {
+              "n": 12,
+              "mean": 2645.085429363339,
+              "p95": 2718.472889731267,
+              "maximum": 2718.472889731267,
+              "stddev": 31.962572281228233
+            }
+          },
+          "257": {
+            "bytes": 15604,
+            "packets": 353,
+            "elapsed": 6.022342999999999,
+            "bytes_per_second": 2591.01814692388,
+            "sample_rate_stats": {
+              "n": 12,
+              "mean": 2592.3354239997784,
+              "p95": 2669.841331798045,
+              "maximum": 2669.841331798045,
+              "stddev": 68.12650423293957
+            }
+          }
+        }
+      },
+      "Change": {
+        "trace_start": 34.999379,
+        "trace_end": 41.02678,
+        "complete_frames": 360,
+        "effective_frame_hz": 59.894570582132786,
+        "metrics": {
+          "replication_ms": {
+            "n": 360,
+            "mean": 8.268764444444582,
+            "p95": 10.897899999996241,
+            "maximum": 19.17389999999841,
+            "stddev": 1.6433753368044848
+          },
+          "prioritize_process_ms": {
+            "n": 360,
+            "mean": 6.059458333333151,
+            "p95": 7.778099999995902,
+            "maximum": 14.913499999998692,
+            "stddev": 1.245680123986327
+          },
+          "consider_ms": {
+            "n": 360,
+            "mean": 0.9290630555556036,
+            "p95": 1.314100000001872,
+            "maximum": 1.9175999999987425,
+            "stddev": 0.1953393916620272
+          },
+          "controller_ms": {
+            "n": 360,
+            "mean": 0.017288888888739647,
+            "p95": 0.002799999997193936,
+            "maximum": 1.565100000000541,
+            "stddev": 0.12324141486772214
+          },
+          "mutation_ms": {
+            "n": 360,
+            "mean": 3.333333332812395e-05,
+            "p95": 0.0,
+            "maximum": 0.002600000001962144,
+            "stddev": 0.0002597406033618343
+          },
+          "flush_ms": {
+            "n": 360,
+            "mean": 0.0,
+            "p95": 0.0,
+            "maximum": 0.0,
+            "stddev": 0.0
+          },
+          "wake_ms": {
+            "n": 360,
+            "mean": 0.0,
+            "p95": 0.0,
+            "maximum": 0.0,
+            "stddev": 0.0
+          },
+          "gt_active_ms": {
+            "n": 360,
+            "mean": 9.285769166666983,
+            "p95": 12.520399999999654,
+            "maximum": 20.882300000003795,
+            "stddev": 1.8581031805890258
+          },
+          "gt_frame_wall_ms": {
+            "n": 360,
+            "mean": 16.695548611111356,
+            "p95": 19.148599999994076,
+            "maximum": 20.975199999995198,
+            "stddev": 1.5498988360723727
+          }
+        },
+        "engine_scope_totals_seconds": {
+          "World Tick Time": 3.262104,
+          "Tick Time": 0.111211,
+          "ServerReplicateActors Time": 2.985872,
+          "Consider Actors Time": 0.335462,
+          "Process Prioritized Actors Time": 2.1881,
+          "Replicate Actor Time": 1.893695,
+          "DormancySample": 1.77485
+        },
+        "connections": {
+          "256": {
+            "bytes": 20134,
+            "packets": 361,
+            "elapsed": 6.026705000000003,
+            "bytes_per_second": 3340.7973345302266,
+            "sample_rate_stats": {
+              "n": 13,
+              "mean": 3920.754318808096,
+              "p95": 12010.526524070388,
+              "maximum": 12010.526524070388,
+              "stddev": 2512.519342746261
+            }
+          },
+          "257": {
+            "bytes": 19885,
+            "packets": 355,
+            "elapsed": 6.026705000000003,
+            "bytes_per_second": 3299.481225644857,
+            "sample_rate_stats": {
+              "n": 13,
+              "mean": 3896.41469123419,
+              "p95": 12247.966916638501,
+              "maximum": 12247.966916638501,
+              "stddev": 2594.5253498282596
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "name": "rare-0-r3",
+    "run_id": "2E253F2F4F489EF830C16CAE3D4A88F1",
+    "conditions": {
+      "engine": "5.8.3-58210709+++UE5+Release-5.8",
+      "run": "2E253F2F4F489EF830C16CAE3D4A88F1",
+      "scenario": "0",
+      "dormancy": "0",
+      "continuous": "0",
+      "actors": "4096",
+      "percent": "1",
+      "interval": "1.000",
+      "seed": "74219",
+      "connections": "2",
+      "netmode": "1",
+      "warm": "3.000",
+      "stable": "6.000",
+      "change": "6.000",
+      "relevancy": "AlwaysRelevant",
+      "netupdate": "30"
+    },
+    "final": "Final state matched | 2/2 clients | convergence upper bound 0.429s | SHA1 over sorted ID/version/value; intermediate versions may coalesce.\nDigest=B84E2334AF6DF34FA0449FA488F79CE92A66B2B1\nSteps=6\nChanges=246\nFlushes=0\nWakes=0\nConnectionChanged=0\n",
+    "phases": {
+      "Stable": {
+        "trace_start": 27.962554,
+        "trace_end": 33.986052,
+        "complete_frames": 360,
+        "effective_frame_hz": 59.9571316501557,
+        "metrics": {
+          "replication_ms": {
+            "n": 360,
+            "mean": 8.42860638888879,
+            "p95": 10.344700000004536,
+            "maximum": 14.96750000000091,
+            "stddev": 1.1095147532479779
+          },
+          "prioritize_process_ms": {
+            "n": 360,
+            "mean": 6.107163611111134,
+            "p95": 7.5350999999983514,
+            "maximum": 10.339699999999397,
+            "stddev": 0.8374400203411627
+          },
+          "consider_ms": {
+            "n": 360,
+            "mean": 0.9465658333333928,
+            "p95": 1.164200000001614,
+            "maximum": 1.8935000000013247,
+            "stddev": 0.1253964401958538
+          },
+          "controller_ms": {
+            "n": 360,
+            "mean": 0.010514722222095449,
+            "p95": 0.0014999999997655777,
+            "maximum": 0.34219999999862694,
+            "stddev": 0.052957100732712245
+          },
+          "mutation_ms": {
+            "n": 360,
+            "mean": 0.0,
+            "p95": 0.0,
+            "maximum": 0.0,
+            "stddev": 0.0
+          },
+          "flush_ms": {
+            "n": 360,
+            "mean": 0.0,
+            "p95": 0.0,
+            "maximum": 0.0,
+            "stddev": 0.0
+          },
+          "wake_ms": {
+            "n": 360,
+            "mean": 0.0,
+            "p95": 0.0,
+            "maximum": 0.0,
+            "stddev": 0.0
+          },
+          "gt_active_ms": {
+            "n": 360,
+            "mean": 9.50235833333371,
+            "p95": 11.584800000001394,
+            "maximum": 16.598100000003058,
+            "stddev": 1.1755826087342245
+          },
+          "gt_frame_wall_ms": {
+            "n": 360,
+            "mean": 16.67813083333336,
+            "p95": 19.75609999999861,
+            "maximum": 24.276800000002652,
+            "stddev": 1.8955277039977492
+          }
+        },
+        "engine_scope_totals_seconds": {
+          "World Tick Time": 3.333717,
+          "Tick Time": 0.116489,
+          "ServerReplicateActors Time": 3.043987,
+          "Consider Actors Time": 0.34174,
+          "Process Prioritized Actors Time": 2.205685,
+          "Replicate Actor Time": 1.90624,
+          "DormancySample": 1.786423
+        },
+        "connections": {
+          "256": {
+            "bytes": 15935,
+            "packets": 361,
+            "elapsed": 6.023352000000003,
+            "bytes_per_second": 2645.5369037041155,
+            "sample_rate_stats": {
+              "n": 12,
+              "mean": 2648.0742037276295,
+              "p95": 2682.1401023771036,
+              "maximum": 2682.1401023771036,
+              "stddev": 18.928906269583216
+            }
+          },
+          "257": {
+            "bytes": 15890,
+            "packets": 360,
+            "elapsed": 6.023352000000003,
+            "bytes_per_second": 2638.065980537082,
+            "sample_rate_stats": {
+              "n": 12,
+              "mean": 2640.67116898174,
+              "p95": 2686.9873319419526,
+              "maximum": 2686.9873319419526,
+              "stddev": 33.62661163373079
+            }
+          }
+        }
+      },
+      "Change": {
+        "trace_start": 33.986053,
+        "trace_end": 39.987328,
+        "complete_frames": 358,
+        "effective_frame_hz": 59.87499672819938,
+        "metrics": {
+          "replication_ms": {
+            "n": 358,
+            "mean": 8.00479273743,
+            "p95": 9.820100000005993,
+            "maximum": 14.261499999996374,
+            "stddev": 1.0582777265452077
+          },
+          "prioritize_process_ms": {
+            "n": 358,
+            "mean": 5.826896648044762,
+            "p95": 7.181600000002675,
+            "maximum": 10.463700000002518,
+            "stddev": 0.7921491648146819
+          },
+          "consider_ms": {
+            "n": 358,
+            "mean": 0.9064416201119521,
+            "p95": 1.1628999999970802,
+            "maximum": 2.132899999999438,
+            "stddev": 0.15675849495929356
+          },
+          "controller_ms": {
+            "n": 358,
+            "mean": 0.009788268156528971,
+            "p95": 0.0016999999985500835,
+            "maximum": 0.3602999999969825,
+            "stddev": 0.05091655475636281
+          },
+          "mutation_ms": {
+            "n": 358,
+            "mean": 3.910614529159606e-05,
+            "p95": 0.0,
+            "maximum": 0.002900000005467973,
+            "stddev": 0.00030446037136906364
+          },
+          "flush_ms": {
+            "n": 358,
+            "mean": 0.0,
+            "p95": 0.0,
+            "maximum": 0.0,
+            "stddev": 0.0
+          },
+          "wake_ms": {
+            "n": 358,
+            "mean": 0.0,
+            "p95": 0.0,
+            "maximum": 0.0,
+            "stddev": 0.0
+          },
+          "gt_active_ms": {
+            "n": 358,
+            "mean": 8.958942178770803,
+            "p95": 10.950600000001032,
+            "maximum": 15.825099999993597,
+            "stddev": 1.1549291162277462
+          },
+          "gt_frame_wall_ms": {
+            "n": 358,
+            "mean": 16.70106452513976,
+            "p95": 19.52959999999848,
+            "maximum": 22.896799999998052,
+            "stddev": 1.7116234083264499
+          }
+        },
+        "engine_scope_totals_seconds": {
+          "World Tick Time": 3.134014,
+          "Tick Time": 0.106498,
+          "ServerReplicateActors Time": 2.877024,
+          "Consider Actors Time": 0.326054,
+          "Process Prioritized Actors Time": 2.093899,
+          "Replicate Actor Time": 1.812725,
+          "DormancySample": 1.697777
+        },
+        "connections": {
+          "256": {
+            "bytes": 19600,
+            "packets": 348,
+            "elapsed": 6.000778,
+            "bytes_per_second": 3266.2431438056865,
+            "sample_rate_stats": {
+              "n": 12,
+              "mean": 3268.7483259311166,
+              "p95": 4221.644035741647,
+              "maximum": 4221.644035741647,
+              "stddev": 676.7817520326535
+            }
+          },
+          "257": {
+            "bytes": 19934,
+            "packets": 356,
+            "elapsed": 6.000778,
+            "bytes_per_second": 3321.902593297069,
+            "sample_rate_stats": {
+              "n": 12,
+              "mean": 3322.439087929179,
+              "p95": 4203.989486716067,
+              "maximum": 4203.989486716067,
+              "stddev": 676.6993407305802
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "name": "rare-1-r1",
+    "run_id": "E82A7BB54C1CCDFA0AC7D0A29308CCAC",
+    "conditions": {
+      "engine": "5.8.3-58210709+++UE5+Release-5.8",
+      "run": "E82A7BB54C1CCDFA0AC7D0A29308CCAC",
+      "scenario": "1",
+      "dormancy": "1",
+      "continuous": "0",
+      "actors": "4096",
+      "percent": "1",
+      "interval": "1.000",
+      "seed": "74219",
+      "connections": "2",
+      "netmode": "1",
+      "warm": "3.000",
+      "stable": "6.000",
+      "change": "6.000",
+      "relevancy": "AlwaysRelevant",
+      "netupdate": "30"
+    },
+    "final": "Final state matched | 2/2 clients | convergence upper bound 0.475s | SHA1 over sorted ID/version/value; intermediate versions may coalesce.\nDigest=B84E2334AF6DF34FA0449FA488F79CE92A66B2B1\nSteps=6\nChanges=246\nFlushes=246\nWakes=0\nConnectionChanged=0\n",
+    "phases": {
+      "Stable": {
+        "trace_start": 28.668867,
+        "trace_end": 34.678091,
+        "complete_frames": 255,
+        "effective_frame_hz": 42.65730949308311,
+        "metrics": {
+          "replication_ms": {
+            "n": 255,
+            "mean": 0.08956117647056548,
+            "p95": 0.14979999999908955,
+            "maximum": 0.21500000000074238,
+            "stddev": 0.030743898033988092
+          },
+          "prioritize_process_ms": {
+            "n": 255,
+            "mean": 0.05291882352966804,
+            "p95": 0.10029999999972006,
+            "maximum": 0.12500000000059686,
+            "stddev": 0.02144246739692259
+          },
+          "consider_ms": {
+            "n": 255,
+            "mean": 0.013004705882340716,
+            "p95": 0.01990000000162695,
+            "maximum": 0.02650000000059549,
+            "stddev": 0.0038281357651810313
+          },
+          "controller_ms": {
+            "n": 255,
+            "mean": 0.016476078431426188,
+            "p95": 0.0020000000020559128,
+            "maximum": 0.5710000000007653,
+            "stddev": 0.07511727691860311
+          },
+          "mutation_ms": {
+            "n": 255,
+            "mean": 0.0,
+            "p95": 0.0,
+            "maximum": 0.0,
+            "stddev": 0.0
+          },
+          "flush_ms": {
+            "n": 255,
+            "mean": 0.0,
+            "p95": 0.0,
+            "maximum": 0.0,
+            "stddev": 0.0
+          },
+          "wake_ms": {
+            "n": 255,
+            "mean": 0.0,
+            "p95": 0.0,
+            "maximum": 0.0,
+            "stddev": 0.0
+          },
+          "gt_active_ms": {
+            "n": 255,
+            "mean": 1.1259050980391703,
+            "p95": 1.7173000000028082,
+            "maximum": 2.3222999999994443,
+            "stddev": 0.3170081523786428
+          },
+          "gt_frame_wall_ms": {
+            "n": 255,
+            "mean": 23.442242352941047,
+            "p95": 31.684800000000735,
+            "maximum": 32.28709999999779,
+            "stddev": 7.223678480035084
+          }
+        },
+        "engine_scope_totals_seconds": {
+          "World Tick Time": 0.226481,
+          "Tick Time": 0.078601,
+          "ServerReplicateActors Time": 0.022924,
+          "Consider Actors Time": 0.003328,
+          "Process Prioritized Actors Time": 0.013553,
+          "Replicate Actor Time": 0.01226
+        },
+        "connections": {
+          "256": {
+            "bytes": 11548,
+            "packets": 254,
+            "elapsed": 6.009175000000003,
+            "bytes_per_second": 1921.7280242296147,
+            "sample_rate_stats": {
+              "n": 12,
+              "mean": 1931.3424530811628,
+              "p95": 2684.6556339741837,
+              "maximum": 2684.6556339741837,
+              "stddev": 525.6121408034622
+            }
+          },
+          "257": {
+            "bytes": 11452,
+            "packets": 252,
+            "elapsed": 6.009175000000003,
+            "bytes_per_second": 1905.7524535397945,
+            "sample_rate_stats": {
+              "n": 12,
+              "mean": 1910.111396595572,
+              "p95": 2671.7168093470445,
+              "maximum": 2671.7168093470445,
+              "stddev": 519.5178777959095
+            }
+          }
+        }
+      },
+      "Change": {
+        "trace_start": 34.678092,
+        "trace_end": 40.705134,
+        "complete_frames": 198,
+        "effective_frame_hz": 33.02310131052178,
+        "metrics": {
+          "replication_ms": {
+            "n": 198,
+            "mean": 0.18314191919210798,
+            "p95": 0.6527999999974554,
+            "maximum": 2.530100000001312,
+            "stddev": 0.31745412252623784
+          },
+          "prioritize_process_ms": {
+            "n": 198,
+            "mean": 0.136960101009684,
+            "p95": 0.5196000000040613,
+            "maximum": 2.3932999999942695,
+            "stddev": 0.3057511870784325
+          },
+          "consider_ms": {
+            "n": 198,
+            "mean": 0.01627727272693588,
+            "p95": 0.036800000003722744,
+            "maximum": 0.0647000000029152,
+            "stddev": 0.00949578793266769
+          },
+          "controller_ms": {
+            "n": 198,
+            "mean": 0.030076262626771714,
+            "p95": 0.3123999999985472,
+            "maximum": 0.4673999999980083,
+            "stddev": 0.09361861659249177
+          },
+          "mutation_ms": {
+            "n": 198,
+            "mean": 0.007882828282828429,
+            "p95": 0.0,
+            "maximum": 0.3066000000018221,
+            "stddev": 0.04511227064248062
+          },
+          "flush_ms": {
+            "n": 198,
+            "mean": 0.007690909090568408,
+            "p95": 0.0,
+            "maximum": 0.29939999998873645,
+            "stddev": 0.04401866030244688
+          },
+          "wake_ms": {
+            "n": 198,
+            "mean": 0.0,
+            "p95": 0.0,
+            "maximum": 0.0,
+            "stddev": 0.0
+          },
+          "gt_active_ms": {
+            "n": 198,
+            "mean": 1.4442954545450482,
+            "p95": 2.657100000000412,
+            "maximum": 17.80130000000213,
+            "stddev": 1.3251511748754092
+          },
+          "gt_frame_wall_ms": {
+            "n": 198,
+            "mean": 30.281391414141286,
+            "p95": 32.342700000000946,
+            "maximum": 47.500700000000506,
+            "stddev": 3.8675010327407797
+          }
+        },
+        "engine_scope_totals_seconds": {
+          "World Tick Time": 0.222983,
+          "Tick Time": 0.064418,
+          "ServerReplicateActors Time": 0.036373,
+          "Consider Actors Time": 0.003234,
+          "Process Prioritized Actors Time": 0.027204,
+          "Replicate Actor Time": 0.02267,
+          "DormancySample": 0.011527
+        },
+        "connections": {
+          "256": {
+            "bytes": 33971,
+            "packets": 215,
+            "elapsed": 6.025888999999999,
+            "bytes_per_second": 5637.508424068217,
+            "sample_rate_stats": {
+              "n": 13,
+              "mean": 7622.001025185662,
+              "p95": 39554.155873470154,
+              "maximum": 39554.155873470154,
+              "stddev": 10279.628962968916
+            }
+          },
+          "257": {
+            "bytes": 32074,
+            "packets": 216,
+            "elapsed": 6.025888999999999,
+            "bytes_per_second": 5322.700102839598,
+            "sample_rate_stats": {
+              "n": 13,
+              "mean": 7339.393437342043,
+              "p95": 39554.155873470154,
+              "maximum": 39554.155873470154,
+              "stddev": 10319.063272171832
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "name": "rare-1-r2",
+    "run_id": "AEFE5242423260FD3AF29CA40ED5B549",
+    "conditions": {
+      "engine": "5.8.3-58210709+++UE5+Release-5.8",
+      "run": "AEFE5242423260FD3AF29CA40ED5B549",
+      "scenario": "1",
+      "dormancy": "1",
+      "continuous": "0",
+      "actors": "4096",
+      "percent": "1",
+      "interval": "1.000",
+      "seed": "74219",
+      "connections": "2",
+      "netmode": "1",
+      "warm": "3.000",
+      "stable": "6.000",
+      "change": "6.000",
+      "relevancy": "AlwaysRelevant",
+      "netupdate": "30"
+    },
+    "final": "Final state matched | 2/2 clients | convergence upper bound 0.478s | SHA1 over sorted ID/version/value; intermediate versions may coalesce.\nDigest=B84E2334AF6DF34FA0449FA488F79CE92A66B2B1\nSteps=6\nChanges=246\nFlushes=246\nWakes=0\nConnectionChanged=0\n",
+    "phases": {
+      "Stable": {
+        "trace_start": 31.090682,
+        "trace_end": 37.094109,
+        "complete_frames": 360,
+        "effective_frame_hz": 60.13807099720251,
+        "metrics": {
+          "replication_ms": {
+            "n": 360,
+            "mean": 0.0797905555556354,
+            "p95": 0.12420000000190612,
+            "maximum": 0.23320000000026653,
+            "stddev": 0.02639827207392892
+          },
+          "prioritize_process_ms": {
+            "n": 360,
+            "mean": 0.044461666666774216,
+            "p95": 0.07709999999860884,
+            "maximum": 0.12499999999704414,
+            "stddev": 0.016560412826361524
+          },
+          "consider_ms": {
+            "n": 360,
+            "mean": 0.012706388888804475,
+            "p95": 0.017899999996018323,
+            "maximum": 0.03960000000091668,
+            "stddev": 0.0037881192759953654
+          },
+          "controller_ms": {
+            "n": 360,
+            "mean": 0.009811111111110746,
+            "p95": 0.0016999999985500835,
+            "maximum": 0.3895999999983246,
+            "stddev": 0.051186587389182345
+          },
+          "mutation_ms": {
+            "n": 360,
+            "mean": 0.0,
+            "p95": 0.0,
+            "maximum": 0.0,
+            "stddev": 0.0
+          },
+          "flush_ms": {
+            "n": 360,
+            "mean": 0.0,
+            "p95": 0.0,
+            "maximum": 0.0,
+            "stddev": 0.0
+          },
+          "wake_ms": {
+            "n": 360,
+            "mean": 0.0,
+            "p95": 0.0,
+            "maximum": 0.0,
+            "stddev": 0.0
+          },
+          "gt_active_ms": {
+            "n": 360,
+            "mean": 1.1083783333332597,
+            "p95": 1.5211999999991122,
+            "maximum": 4.984099999997937,
+            "stddev": 0.37872439590353046
+          },
+          "gt_frame_wall_ms": {
+            "n": 360,
+            "mean": 16.627963611110886,
+            "p95": 17.295099999998342,
+            "maximum": 20.875499999998937,
+            "stddev": 0.5215006290592206
+          }
+        },
+        "engine_scope_totals_seconds": {
+          "World Tick Time": 0.306686,
+          "Tick Time": 0.112675,
+          "ServerReplicateActors Time": 0.028834,
+          "Consider Actors Time": 0.004589,
+          "Process Prioritized Actors Time": 0.016082,
+          "Replicate Actor Time": 0.014518
+        },
+        "connections": {
+          "256": {
+            "bytes": 15647,
+            "packets": 355,
+            "elapsed": 6.0034279999999995,
+            "bytes_per_second": 2606.3442419897433,
+            "sample_rate_stats": {
+              "n": 12,
+              "mean": 2607.266269111752,
+              "p95": 2674.1876402658636,
+              "maximum": 2674.1876402658636,
+              "stddev": 46.98865707021402
+            }
+          },
+          "257": {
+            "bytes": 15640,
+            "packets": 355,
+            "elapsed": 6.0034279999999995,
+            "bytes_per_second": 2605.1782414980244,
+            "sample_rate_stats": {
+              "n": 12,
+              "mean": 2604.313288080043,
+              "p95": 2669.57408591349,
+              "maximum": 2669.57408591349,
+              "stddev": 62.48458647552541
+            }
+          }
+        }
+      },
+      "Change": {
+        "trace_start": 37.09411,
+        "trace_end": 43.097309,
+        "complete_frames": 362,
+        "effective_frame_hz": 60.47205623032565,
+        "metrics": {
+          "replication_ms": {
+            "n": 362,
+            "mean": 0.11327541436499275,
+            "p95": 0.24080000000026303,
+            "maximum": 2.4492999999949916,
+            "stddev": 0.22364969387674238
+          },
+          "prioritize_process_ms": {
+            "n": 362,
+            "mean": 0.07902016574615738,
+            "p95": 0.15719999999674883,
+            "maximum": 2.390500000004181,
+            "stddev": 0.2175359530434281
+          },
+          "consider_ms": {
+            "n": 362,
+            "mean": 0.012883977900488699,
+            "p95": 0.02390000000218606,
+            "maximum": 0.052499999995347935,
+            "stddev": 0.0062011586514923445
+          },
+          "controller_ms": {
+            "n": 362,
+            "mean": 0.014566850828762343,
+            "p95": 0.003999999997006398,
+            "maximum": 0.35570000000006985,
+            "stddev": 0.06110814450348195
+          },
+          "mutation_ms": {
+            "n": 362,
+            "mean": 0.003758563535906513,
+            "p95": 0.0,
+            "maximum": 0.251900000002081,
+            "stddev": 0.029044543041292305
+          },
+          "flush_ms": {
+            "n": 362,
+            "mean": 0.0036646408837781217,
+            "p95": 0.0,
+            "maximum": 0.2459999999970819,
+            "stddev": 0.028319911036944246
+          },
+          "wake_ms": {
+            "n": 362,
+            "mean": 0.0,
+            "p95": 0.0,
+            "maximum": 0.0,
+            "stddev": 0.0
+          },
+          "gt_active_ms": {
+            "n": 362,
+            "mean": 1.0402251381214518,
+            "p95": 1.509499999997388,
+            "maximum": 4.68700000001121,
+            "stddev": 0.39856330923927985
+          },
+          "gt_frame_wall_ms": {
+            "n": 362,
+            "mean": 16.536161602209717,
+            "p95": 17.354699999998502,
+            "maximum": 20.18910000000318,
+            "stddev": 0.5719116003411849
+          }
+        },
+        "engine_scope_totals_seconds": {
+          "World Tick Time": 0.299352,
+          "Tick Time": 0.103323,
+          "ServerReplicateActors Time": 0.041104,
+          "Consider Actors Time": 0.004677,
+          "Process Prioritized Actors Time": 0.028674,
+          "Replicate Actor Time": 0.023887,
+          "DormancySample": 0.010277
+        },
+        "connections": {
+          "256": {
+            "bytes": 40521,
+            "packets": 377,
+            "elapsed": 6.00281,
+            "bytes_per_second": 6750.338591426348,
+            "sample_rate_stats": {
+              "n": 13,
+              "mean": 8696.55586485063,
+              "p95": 41347.44133133288,
+              "maximum": 41347.44133133288,
+              "stddev": 10542.367302010844
+            }
+          },
+          "257": {
+            "bytes": 38573,
+            "packets": 376,
+            "elapsed": 6.00281,
+            "bytes_per_second": 6425.8239058041145,
+            "sample_rate_stats": {
+              "n": 13,
+              "mean": 8398.5608311999,
+              "p95": 40783.65834751144,
+              "maximum": 40783.65834751144,
+              "stddev": 10380.840026195541
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "name": "rare-1-r3",
+    "run_id": "F3B18BB846292D3C8121F0B23F1A82B0",
+    "conditions": {
+      "engine": "5.8.3-58210709+++UE5+Release-5.8",
+      "run": "F3B18BB846292D3C8121F0B23F1A82B0",
+      "scenario": "1",
+      "dormancy": "1",
+      "continuous": "0",
+      "actors": "4096",
+      "percent": "1",
+      "interval": "1.000",
+      "seed": "74219",
+      "connections": "2",
+      "netmode": "1",
+      "warm": "3.000",
+      "stable": "6.000",
+      "change": "6.000",
+      "relevancy": "AlwaysRelevant",
+      "netupdate": "30"
+    },
+    "final": "Final state matched | 2/2 clients | convergence upper bound 0.452s | SHA1 over sorted ID/version/value; intermediate versions may coalesce.\nDigest=B84E2334AF6DF34FA0449FA488F79CE92A66B2B1\nSteps=6\nChanges=246\nFlushes=246\nWakes=0\nConnectionChanged=0\n",
+    "phases": {
+      "Stable": {
+        "trace_start": 29.016626,
+        "trace_end": 35.034849,
+        "complete_frames": 361,
+        "effective_frame_hz": 60.15549378628747,
+        "metrics": {
+          "replication_ms": {
+            "n": 361,
+            "mean": 0.07874653739602176,
+            "p95": 0.11229999999784468,
+            "maximum": 0.3646999999986633,
+            "stddev": 0.027363426430754362
+          },
+          "prioritize_process_ms": {
+            "n": 361,
+            "mean": 0.043897783933730214,
+            "p95": 0.07599999999996498,
+            "maximum": 0.20300000000261775,
+            "stddev": 0.017658090546678766
+          },
+          "consider_ms": {
+            "n": 361,
+            "mean": 0.012171745152427174,
+            "p95": 0.01639999999980546,
+            "maximum": 0.06820000000118398,
+            "stddev": 0.004352799801675658
+          },
+          "controller_ms": {
+            "n": 361,
+            "mean": 0.009850692520610646,
+            "p95": 0.0017999999997186933,
+            "maximum": 0.35929999999950724,
+            "stddev": 0.051408216007982954
+          },
+          "mutation_ms": {
+            "n": 361,
+            "mean": 0.0,
+            "p95": 0.0,
+            "maximum": 0.0,
+            "stddev": 0.0
+          },
+          "flush_ms": {
+            "n": 361,
+            "mean": 0.0,
+            "p95": 0.0,
+            "maximum": 0.0,
+            "stddev": 0.0
+          },
+          "wake_ms": {
+            "n": 361,
+            "mean": 0.0,
+            "p95": 0.0,
+            "maximum": 0.0,
+            "stddev": 0.0
+          },
+          "gt_active_ms": {
+            "n": 361,
+            "mean": 1.0950470914129111,
+            "p95": 1.4752000000015641,
+            "maximum": 5.859600000000853,
+            "stddev": 0.3540451513869439
+          },
+          "gt_frame_wall_ms": {
+            "n": 361,
+            "mean": 16.62318698060949,
+            "p95": 17.31830000000656,
+            "maximum": 21.24200000000087,
+            "stddev": 0.5291524435065366
+          }
+        },
+        "engine_scope_totals_seconds": {
+          "World Tick Time": 0.307518,
+          "Tick Time": 0.114144,
+          "ServerReplicateActors Time": 0.028532,
+          "Consider Actors Time": 0.004409,
+          "Process Prioritized Actors Time": 0.01592,
+          "Replicate Actor Time": 0.014397
+        },
+        "connections": {
+          "256": {
+            "bytes": 15859,
+            "packets": 360,
+            "elapsed": 6.018310999999997,
+            "bytes_per_second": 2635.1247052536846,
+            "sample_rate_stats": {
+              "n": 12,
+              "mean": 2634.3961956142284,
+              "p95": 2681.54635188606,
+              "maximum": 2681.54635188606,
+              "stddev": 40.44428776916301
+            }
+          },
+          "257": {
+            "bytes": 15744,
+            "packets": 358,
+            "elapsed": 6.018310999999997,
+            "bytes_per_second": 2616.016354090044,
+            "sample_rate_stats": {
+              "n": 12,
+              "mean": 2615.490125946556,
+              "p95": 2685.4524645617867,
+              "maximum": 2685.4524645617867,
+              "stddev": 58.442161813118865
+            }
+          }
+        }
+      },
+      "Change": {
+        "trace_start": 35.03485,
+        "trace_end": 41.061139,
+        "complete_frames": 361,
+        "effective_frame_hz": 60.08041722238277,
+        "metrics": {
+          "replication_ms": {
+            "n": 361,
+            "mean": 0.11633656509701416,
+            "p95": 0.2512000000010062,
+            "maximum": 1.9394000000048095,
+            "stddev": 0.21634255499952051
+          },
+          "prioritize_process_ms": {
+            "n": 361,
+            "mean": 0.08040914127459341,
+            "p95": 0.15280000000217342,
+            "maximum": 1.8546000000014828,
+            "stddev": 0.2091986980775097
+          },
+          "consider_ms": {
+            "n": 361,
+            "mean": 0.013283656509849999,
+            "p95": 0.02250000000003638,
+            "maximum": 0.048100000000772525,
+            "stddev": 0.00558109247907393
+          },
+          "controller_ms": {
+            "n": 361,
+            "mean": 0.014203878116190363,
+            "p95": 0.004500000002849447,
+            "maximum": 0.3317000000038206,
+            "stddev": 0.05926729317631275
+          },
+          "mutation_ms": {
+            "n": 361,
+            "mean": 0.0036767313019582123,
+            "p95": 0.0,
+            "maximum": 0.2399000000039564,
+            "stddev": 0.02838736047699314
+          },
+          "flush_ms": {
+            "n": 361,
+            "mean": 0.003578393351831796,
+            "p95": 0.0,
+            "maximum": 0.23309999998843978,
+            "stddev": 0.027626178781934217
+          },
+          "wake_ms": {
+            "n": 361,
+            "mean": 0.0,
+            "p95": 0.0,
+            "maximum": 0.0,
+            "stddev": 0.0
+          },
+          "gt_active_ms": {
+            "n": 361,
+            "mean": 1.1510759002772322,
+            "p95": 1.5953999999993584,
+            "maximum": 5.799899999999525,
+            "stddev": 0.42273307102015595
+          },
+          "gt_frame_wall_ms": {
+            "n": 361,
+            "mean": 16.643982548476554,
+            "p95": 17.449300000002665,
+            "maximum": 21.981499999995435,
+            "stddev": 0.6537822258045118
+          }
+        },
+        "engine_scope_totals_seconds": {
+          "World Tick Time": 0.326441,
+          "Tick Time": 0.112451,
+          "ServerReplicateActors Time": 0.042102,
+          "Consider Actors Time": 0.004808,
+          "Process Prioritized Actors Time": 0.029105,
+          "Replicate Actor Time": 0.024551,
+          "DormancySample": 0.0103
+        },
+        "connections": {
+          "256": {
+            "bytes": 40700,
+            "packets": 380,
+            "elapsed": 6.025483999999999,
+            "bytes_per_second": 6754.644108257529,
+            "sample_rate_stats": {
+              "n": 13,
+              "mean": 9874.287604204736,
+              "p95": 54944.40588869295,
+              "maximum": 54944.40588869295,
+              "stddev": 14050.421706792355
+            }
+          },
+          "257": {
+            "bytes": 38334,
+            "packets": 369,
+            "elapsed": 6.025483999999999,
+            "bytes_per_second": 6361.978556411404,
+            "sample_rate_stats": {
+              "n": 13,
+              "mean": 9503.300800599762,
+              "p95": 54708.14937318123,
+              "maximum": 54708.14937318123,
+              "stddev": 14068.377598581454
+            }
+          }
+        }
+      }
+    }
+  }
+]

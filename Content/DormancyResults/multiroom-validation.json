@@ -1,0 +1,50 @@
+{
+  "schema": "resource-multiroom-v3",
+  "map_sha256": "99439BB20612EC18ED6C68F5B198F3DF85FDB830E5225AEBC85246B2049FE03E",
+  "module_sha256": "2D0227F86E834C951A540E623EACA3854BC92D3BC3F4591319FA86BCFBED5827",
+  "layout": {
+    "rooms": [
+      "Introduction",
+      "Dormancy comparison exhibits",
+      "Resource benchmark"
+    ],
+    "world_partition": false,
+    "benchmark_options": "Exact reference settings except RoomName",
+    "comparison_rooms": 1,
+    "resource_exhibits": 8,
+    "grid_spacing_cm": 60,
+    "world_controls": 0
+  },
+  "build": "Saved/Logs/BuildMultiroom.log",
+  "automated_compare": {
+    "percent": 10,
+    "directory": "Saved/DormancyRuns/multiroom-compare",
+    "warm_seconds": 2,
+    "interval_seconds": 0.1,
+    "change_seconds": 2,
+    "runs": [
+      {
+        "run_id": "E223295B4A85061B3248AD86397C5592",
+        "result": "Final state matched | 2/2 clients | convergence upper bound 0.432s | SHA1 over sorted ID/version/health; intermediate versions may coalesce.\nDigest=51477ABB53828E4B7E43824099A004677C592B04\nSteps=20\nChanges=520\nFlushes=0\nWakes=0\nConnectionChanged=0\nCatchupSteps=0\n"
+      },
+      {
+        "run_id": "57AF58D847B1011DF386CC85F1380B81",
+        "result": "Final state matched | 2/2 clients | convergence upper bound 0.417s | SHA1 over sorted ID/version/health; intermediate versions may coalesce.\nDigest=51477ABB53828E4B7E43824099A004677C592B04\nSteps=20\nChanges=520\nFlushes=520\nWakes=0\nConnectionChanged=0\nCatchupSteps=0\n"
+      },
+      {
+        "run_id": "A2051E3F45FEA1D1E6EE598380B7E8D5",
+        "result": "Final state matched | 2/2 clients | convergence upper bound 0.472s | SHA1 over sorted ID/version/health; intermediate versions may coalesce.\nDigest=51477ABB53828E4B7E43824099A004677C592B04\nSteps=20\nChanges=520\nFlushes=0\nWakes=26\nConnectionChanged=0\nCatchupSteps=0\n"
+      }
+    ],
+    "stable_seconds": 2,
+    "count": 256,
+    "mode": "Dedicated server + 2 clients, headless",
+    "driver_client": 2
+  },
+  "automated_control_path": {
+    "directory": "Saved/DormancyRuns/multiroom-controls",
+    "status": "Passed: invalid settings rejected, settings locked during run, stop, apply, clear and restart"
+  },
+  "manual_input": "Unverified: movement, F, HUD interaction and input restoration require user testing",
+  "performance": "Not measured for this layout. Prior results preserved."
+}

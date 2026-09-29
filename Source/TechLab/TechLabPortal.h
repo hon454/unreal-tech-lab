@@ -16,6 +16,7 @@ class TECHLAB_API ATechLabPortal : public AActor
 
 public:
 	ATechLabPortal();
+
 	virtual void OnConstruction(const FTransform& Transform) override;
 
 	UPROPERTY(EditAnywhere, Category = "TechLab")
@@ -35,6 +36,11 @@ protected:
 	virtual void BeginPlay() override;
 
 private:
+	UFUNCTION()
+	void EnterExhibit(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor,
+		UPrimitiveComponent* OtherComponent, int32 OtherBodyIndex, bool bFromSweep,
+		const FHitResult& SweepResult);
+
 	UPROPERTY(VisibleAnywhere, Category = "TechLab")
 	TObjectPtr<UStaticMeshComponent> Plinth;
 
@@ -51,9 +57,4 @@ private:
 	TObjectPtr<UTextRenderComponent> Status;
 
 	bool bTravelRequested = false;
-
-	UFUNCTION()
-	void EnterExhibit(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor,
-		UPrimitiveComponent* OtherComponent, int32 OtherBodyIndex, bool bFromSweep,
-		const FHitResult& SweepResult);
 };

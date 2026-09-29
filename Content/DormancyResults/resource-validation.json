@@ -1,0 +1,23 @@
+{
+  "resource-allclients-client2": {
+    "complete": true,
+    "late_join_matched": false,
+    "source_log": "Saved/DormancyRuns/resource-allclients-client2/server.log"
+  },
+  "resource-allclients-late": {
+    "complete": true,
+    "late_join_matched": true,
+    "source_log": "Saved/DormancyRuns/resource-allclients-late/server.log"
+  },
+  "resource-allclients-loss": {
+    "complete": true,
+    "late_join_matched": false,
+    "source_log": "Saved/DormancyRuns/resource-allclients-loss/server.log"
+  },
+  "resource-allclients-listen": {
+    "complete": true,
+    "late_join_matched": false,
+    "source_log": "Saved/DormancyRuns/resource-allclients-listen/server.log"
+  },
+  "manual_input": "Pending user confirmation for all-client F/HUD operation and evidence zoom."
+}

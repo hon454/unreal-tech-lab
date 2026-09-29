@@ -6,6 +6,7 @@
 #include "GameFramework/PlayerController.h"
 #include "TechLabPlayerController.generated.h"
 
+class UDormancyClientComponent;
 class UInputMappingContext;
 class UUserWidget;
 
@@ -18,18 +19,31 @@ class ATechLabPlayerController : public APlayerController
 {
 	GENERATED_BODY()
 
+public:
+	ATechLabPlayerController();
+
+	virtual void NotifyLoadedWorld(FName WorldPackageName, bool bFinalDest) override;
+
 protected:
+	/** Gameplay initialization */
+	virtual void BeginPlay() override;
+
+	/** Input mapping context setup */
+	virtual void SetupInputComponent() override;
+
+	/** Returns true if the player should use UMG touch controls */
+	bool ShouldUseTouchControls() const;
 
 	/** Input Mapping Contexts */
-	UPROPERTY(EditAnywhere, Category ="Input|Input Mappings")
+	UPROPERTY(EditAnywhere, Category = "Input|Input Mappings")
 	TArray<UInputMappingContext*> DefaultMappingContexts;
 
 	/** Input Mapping Contexts */
-	UPROPERTY(EditAnywhere, Category="Input|Input Mappings")
+	UPROPERTY(EditAnywhere, Category = "Input|Input Mappings")
 	TArray<UInputMappingContext*> MobileExcludedMappingContexts;
 
 	/** Mobile controls widget to spawn */
-	UPROPERTY(EditAnywhere, Category="Input|Touch Controls")
+	UPROPERTY(EditAnywhere, Category = "Input|Touch Controls")
 	TSubclassOf<UUserWidget> MobileControlsWidgetClass;
 
 	/** Pointer to the mobile controls widget */
@@ -40,13 +54,7 @@ protected:
 	UPROPERTY(EditAnywhere, Config, Category = "Input|Touch Controls")
 	bool bForceTouchControls = false;
 
-	/** Gameplay initialization */
-	virtual void BeginPlay() override;
-
-	/** Input mapping context setup */
-	virtual void SetupInputComponent() override;
-
-	/** Returns true if the player should use UMG touch controls */
-	bool ShouldUseTouchControls() const;
-
+private:
+	UPROPERTY()
+	TObjectPtr<UDormancyClientComponent> DormancyClient;
 };

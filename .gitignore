@@ -77,3 +77,14 @@ Plugins/**/Intermediate/*
 
 # Cache files for the editor to use
 DerivedDataCache/*
+
+# Generated Python bytecode
+__pycache__/
+*.pyc
+
+# Claude Code personal settings
+.claude/settings.local.json
+
+# Local IDE and temporary files
+*.DotSettings.user
+.mcp.json.tmp

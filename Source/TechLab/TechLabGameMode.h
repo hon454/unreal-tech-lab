@@ -15,7 +15,6 @@ class ATechLabGameMode : public AGameModeBase
 	GENERATED_BODY()
 
 public:
-
 	/** Constructor */
 	ATechLabGameMode();
 };
